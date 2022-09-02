@@ -19,7 +19,7 @@ class CreateCardStatusTable extends Migration {
 			$table->integer('staff_id');
 			$table->string('description', 3000);
 			$table->string('updated_by', 100);
-			$table->timestamps(10);
+			$table->timestamps();
 		});
 	}
 

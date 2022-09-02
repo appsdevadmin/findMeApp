@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration {
 			$table->string('email', 50)->nullable();
 			$table->string('access');
 			$table->integer('role');
-			$table->timestamps(10);
+			$table->timestamps();
 		});
 	}
 

@@ -40,7 +40,7 @@ class CreateStaffDataTable extends Migration {
 			$table->string('category');
 			$table->string('last_name');
 			$table->string('status', 50);
-			$table->timestamps(10);
+			$table->timestamps();
 		});
 	}
 

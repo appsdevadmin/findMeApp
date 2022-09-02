@@ -20,7 +20,7 @@ class CreateRolesTable extends Migration {
 			$table->string('description')->unique('users_email_unique');
 			$table->integer('active');
 			$table->string('created_by');
-			$table->timestamps(10);
+			$table->timestamps();
 		});
 	}
 
