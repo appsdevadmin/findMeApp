@@ -29,5 +29,8 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'olympus' => [
+        'base_url' => env('OLYMPUS_BASE_URL', 'http://10.0.48.74:777/Servicenew.asmx/'),
+    ],
 
 ];

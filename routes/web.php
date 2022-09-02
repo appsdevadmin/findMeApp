@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,48 +14,63 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Models\Task;
-use Illuminate\Http\Request;
 
-/**
-    * Show Task Dashboard
-    */
+
 Route::get('/', function () {
-    error_log("INFO: get /");
-    return view('tasks', [
-        'tasks' => Task::orderBy('created_at', 'asc')->get()
-    ]);
+    return view('app_pages.login');
 });
 
-/**
-    * Add New Task
-    */
-Route::post('/task', function (Request $request) {
-    error_log("INFO: post /task");
-    $validator = Validator::make($request->all(), [
-        'name' => 'required|max:255',
-    ]);
 
-    if ($validator->fails()) {
-        error_log("ERROR: Add task failed.");
-        return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-    }
-
-    $task = new Task;
-    $task->name = $request->name;
-    $task->save();
-
-    return redirect('/');
+Route::get('index', function () {
+    return view('app_pages.index');
 });
 
-/**
-    * Delete Task
-    */
-Route::delete('/task/{id}', function ($id) {
-    error_log('INFO: delete /task/'.$id);
-    Task::findOrFail($id)->delete();
+Route::get('/generateQR', [App\Http\Controllers\QRCodeGen::class,'generateQR']);
 
-    return redirect('/');
-});
+//QUESTIONNAIRE
+
+Route::get('/{id}', [Controllers\idcardController::class, 'staff_data']);
+Route::get('home/menu', [Controllers\idcardController::class, 'home']);
+
+
+//LOGIN
+Route::get('login', [Controllers\loginController::class, 'login']);
+Route::post('login', [Controllers\loginController::class, 'stafflogin']);
+	
+	
+//404//
+Route::get('error_page', [Controllers\loginController::class, 'error_page']);
+
+//LOGOUT//
+Route::get('home/logout', [Controllers\loginController::class, 'logout']);
+
+//HOME//
+Route::get('home', [Controllers\idcardController::class, 'home']);
+
+
+//MANAGE USERS//
+Route::get('manage_users/menu', [Controllers\idcardController::class, 'manage_users'])->name('Manage Users');
+Route::get('create_user/menu', [Controllers\idcardController::class, 'create_user']);
+Route::get('edit_user/{id}', [Controllers\idcardController::class, 'edit_user'])->name('Edit User');
+Route::post('create_user', [Controllers\idcardController::class, 'new_user']);
+Route::patch('edit_user/{id}', [Controllers\idcardController::class, 'update_user']);
+
+Route::post('card_stolen', [Controllers\idcardController::class, 'card_stolen']);
+
+Route::post('search_staff', [Controllers\idcardController::class, 'search_staff']);
+
+Route::get('activate_card/{id}', [Controllers\idcardController::class, 'activate_card']);
+Route::get('deactivate_card/{id}', [Controllers\idcardController::class, 'deactivate_card']);
+
+
+//STATISTICS//
+
+Route::get('view_staff/menu', [Controllers\idcardController::class, 'view_staff']);
+Route::get('view_staff/{id}', [Controllers\idcardController::class, 'view_staff_data']);
+Route::get('view_card/{id}', [Controllers\idcardController::class, 'view_card']);
+
+
+
+
+
+
