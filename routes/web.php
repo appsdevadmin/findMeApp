@@ -16,14 +16,12 @@ use App\Http\Controllers;
 
 
 
-Route::get('/', function () {
-    return view('app_pages.login');
-});
+Route::get('/', [Controllers\loginController::class, 'index']);
 
 
-Route::get('index', function () {
-    return view('app_pages.index');
-});
+// Route::get('index', function () {
+//     return view('app_pages.index');
+// });
 
 Route::get('/generateQR', [App\Http\Controllers\QRCodeGen::class,'generateQR']);
 
