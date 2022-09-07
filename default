@@ -7,7 +7,8 @@ server {
     index  index.php index.html index.htm;
     server_name  example.com www.example.com; 
 
-    location / {            
+    location / {     
+        index  index.php index.html index.htm hostingstart.html;
         try_files $uri $uri/ /index.php?$args; # changed for Laravel
     }
 
