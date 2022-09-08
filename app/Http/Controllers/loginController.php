@@ -25,6 +25,11 @@ class loginController extends Controller
 
     public $basicStaffDetails;
 
+    public function index()
+    {
+        return view('app_pages.login');
+    }
+
     public function __construct()
     {
         $this->basicStaffDetails = new GetBasicStaffDetailsRequest();
