@@ -69,11 +69,8 @@ class loginController extends Controller
         $username = $input['staff_id'];
         $password = $input['password'];
 
-        if (app()->environment(['local', 'testing'])) {
-            $connection = (new ActiveDirectoryService())->connectTestMode($username, $password);
-        } else {
-            $connection = (new ActiveDirectoryService())->connect($username, $password);
-        }
+        $connection = (new ActiveDirectoryService())->connect($username, $password);
+       
 
         if (!$connection['status']) {
             Session::flash('message', $connection['message']);

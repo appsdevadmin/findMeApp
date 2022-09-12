@@ -5,7 +5,7 @@
    
     <!-- Main content -->
     <section class="content">
-	@if(($staff_data != "") && ($staff_details != ""))
+	@if($staff_data != "") 
 	  
 	  <!-- Default box -->
       <div class="card card-solid">
@@ -20,9 +20,9 @@
 								<div id="sig-person" class="column left sig-person">
 									<div class="center">
 										<h4>
-										   {{$staff_details->firstname}} {{$staff_details->surname}}
+										   {{$staff_data->first_name}} {{$staff_data->last_name}}
 										</h4>
-										<!--span>{{$staff_details->designation}}</span-->
+										
 									</div>
 								</div>
 								<div id="sig-company" class="column middle  sig-company">
@@ -34,7 +34,7 @@
 													<img border="0" width="10" alt="phone" style="border:0; height:10px; width:10px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png">
 												</div>
 												<div class="column right-icon" style="text-align:left"> 
-													{{$staff_details->extension}}
+													{{$staff_data->mobile}}
 												</div>
 											</li>
 											<li>
@@ -43,7 +43,7 @@
 													<img border="0" width="10" alt="email" style="border:0; height:10px; width:10px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png">
 												</div>
 												<div class="column right-icon" style="text-align:left; word-wrap:normal">
-													{{$staff_details->emailaddress}}
+													{{$staff_data->email}}
 												</div>
 											</li>
 											<li>
@@ -126,7 +126,7 @@
                 <div class="card-body pt-0">						
                      	<div class="visible-print text-center">
 							<hr/>						
-							@if($staff_details == "")
+							@if($staff_data == "")
 								<p><h4>This Card in no longer valid!</h4></p>
 							@else
 								<p><h4>The Scanned QR code is not valid!</h4></p>

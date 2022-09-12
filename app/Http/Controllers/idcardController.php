@@ -33,22 +33,23 @@ class idcardController extends Controller {
 	{
 
 		$staff_data = staff_data::where('unique_id',$id)->first();
+		
 		if($staff_data != ""){
-            $staff_details = (object)$this->basicStaffDetails->init($staff_data->staff_id);
+            //$staff_details = (object)$this->basicStaffDetails->init($staff_data->staff_id);
 
-            if(empty($staff_details->staff_id)){
+            if(empty($staff_data)){
                 abort(404);
             }
 
 			Session::put('idx', $id);
 			if($staff_data->status == 'Deactivated')
 				$staff_data = "";
-			return view('app_pages.id', compact('staff_details','id','staff_data'));
+			return view('app_pages.id', compact('id','staff_data'));
 
 		}else{
 			 Session::flash('message_error', 'Invalid Code!');
-			 $staff_details = " ";
-			 return view('app_pages.id', compact('staff_data','staff_details'));
+			 $staff_data = " ";
+			 return view('app_pages.id', compact('staff_data'));
 		}
 
 
