@@ -2,27 +2,31 @@
 @section('content')
 
     <!-- Content Header (Page header) -->
-   
+
     <!-- Main content -->
     <section class="content">
-	@if($staff_data != "") 
-	  
+	@if($staff_data != "")
+
 	  <!-- Default box -->
       <div class="card card-solid">
         <div class="card-body pb-0">
              <div class="card-header text-muted border-bottom-0">
-                  NNPC Limited 
+                  NNPC Limited
                 </div>
 				<div class="visible-print text-center">
 					<div class="card-body pt-0">
-							
+
 							<div id="signature-wrapper" class="signature-wrapper">
 								<div id="sig-person" class="column left sig-person">
-									<div class="center">
+                                    <div class="center">
+                                        <div style="align: middle">
+                                            <img src="https://www.nnpcgroup.com/assets/images/new-nnpc-logo.png" alt="logo" role="presentation" width="80">
+                                        </div>
+                                    </br>
 										<h4>
 										   {{$staff_data->first_name}} {{$staff_data->last_name}}
+                                            ({{$staff_data->staff_id}})
 										</h4>
-										
 									</div>
 								</div>
 								<div id="sig-company" class="column middle  sig-company">
@@ -33,10 +37,20 @@
 
 													<img border="0" width="10" alt="phone" style="border:0; height:10px; width:10px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png">
 												</div>
-												<div class="column right-icon" style="text-align:left"> 
-													{{$staff_data->mobile}}
+												<div class="column right-icon" style="text-align:left">
+													{{$staff_data->ext}}
 												</div>
 											</li>
+                                            <li>
+                                                <div class="column left-icon">
+
+                                                    <img border="0" width="10" alt="phone" style="border:0; height:10px; width:10px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png">
+                                                </div>
+                                                <div class="column right-icon" style="text-align:left">
+                                                    {{$staff_data->mobile}}
+                                                </div>
+                                            </li>
+
 											<li>
 												<div class="column left-icon">
 
@@ -46,26 +60,44 @@
 													{{$staff_data->email}}
 												</div>
 											</li>
-											<li>
-												<div class="column left-icon">
-													<img border="0" width="10" alt="website" style="border:0; height:10px; width:10px; " src="https://www.nnpcgroup.com/emailsignature/images/website.png">
-												</div>
-												<div class="column right-icon" style="text-align:left">
-													<a href="https://nnpcgroup.com">nnpcgroup.com</a>
-												</div>
-											</li>
+                                            <li>
+                                                <div class="column left-icon">
+
+                                                    <img border="0" width="10" alt="email" style="border:0; height:10px; width:10px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png">
+                                                </div>
+                                                <div class="column right-icon" style="text-align:left; word-wrap:normal">
+                                                    {{$staff_data->department_name}}
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="column left-icon">
+
+                                                    <img border="0" width="10" alt="email" style="border:0; height:10px; width:10px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png">
+                                                </div>
+                                                <div class="column right-icon" style="text-align:left; word-wrap:normal">
+                                                    {{$staff_data->sbu}}
+                                                </div>
+                                            </li>
 											<li>
 													<div class="column left-icon">
 														<img border="0" width="10" alt="address" style="border:0; height:10px; width:10px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png">
 													</div>
 													<div class="column right-icon" style="text-align:left">
 														<p>
-															Herbert Macaulay Way, CBD,<br /> Abuja, Nigeria
+                                                            {{$staff_data->sbu}}, {{$staff_data->loc_description}}
 														</p>
 													</div>
 											</li>
+                                            <li>
+                                                <div class="column left-icon">
+                                                    <img border="0" width="10" alt="phone" style="border:0; height:10px; width:10px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png">
+                                                </div>
+                                                <div class="column right-icon" style="text-align:left; word-wrap:normal">
+                                                    <p>+234 094 608 1169</p>
+                                                </div>
+                                            </li>
 										</ul>
-										<p style="margin-top:10px;">
+										<p style="margin-top:15px;">
 											<a href="https://web.facebook.com/nnpclimited/" target="_blank" rel="noopener">
 												<img border="0" width="15" alt="facebook icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/facebook.png"></a>
 											</span>
@@ -80,19 +112,13 @@
 										</p>
 									</div>
 								</div>
-									<div id="sig-logo" class="column right sig-logo">
-										<div class="div-wrapper">
-											<img src="https://www.nnpcgroup.com/assets/images/new-nnpc-logo.png" alt="logo" role="presentation" width="80">
-										</div>
-
-									</div>
 
 								</div>
-								
-						
-						
-				
-					   
+
+
+
+
+
 					</div>
 					<div class="card-footer">
 					  <div class="text-left">
@@ -102,30 +128,30 @@
 					  </div>
 					</div>
               </div>
-				
-				
+
+
           </div>
         </div>
       <!-- /.card -->
 		<div class="card card-solid">
         <div class="card-body pb-0">
-            
-                <div class="card-body pt-0">						
+
+                <div class="card-body pt-0">
                      	<div class="visible-print text-center">
 							{!! QrCode::size(100)->generate('https://findme.nnpcgroup.com/'.$id); !!}
 							<p>www.nnpcgroup.com</p>
 						</div>
                   </div>
                 </div>
-				
-				
+
+
           </div>
 		@else
 			 <div class="card-body pb-0">
-            
-                <div class="card-body pt-0">						
+
+                <div class="card-body pt-0">
                      	<div class="visible-print text-center">
-							<hr/>						
+							<hr/>
 							@if($staff_data == "")
 								<p><h4>This Card in no longer valid!</h4></p>
 							@else
@@ -137,14 +163,14 @@
 							<hr/>
 						</div>
                   </div>
-                </div>				
-				
+                </div>
+
           </div>
-			
+
 		@endif
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  
+
 @stop
