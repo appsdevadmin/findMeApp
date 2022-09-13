@@ -33,23 +33,25 @@ class idcardController extends Controller {
 	{
 
 		$staff_data = staff_data::where('unique_id',$id)->first();
-		
-		if($staff_data != ""){
+
+		if(!$staff_data){
             //$staff_details = (object)$this->basicStaffDetails->init($staff_data->staff_id);
+//            if(empty($staff_data)){
+//
+//            }
 
-            if(empty($staff_data)){
-                abort(404);
-            }
 
-			Session::put('idx', $id);
-			if($staff_data->status == 'Deactivated')
-				$staff_data = "";
-			return view('app_pages.id', compact('id','staff_data'));
+            Session::flash('message_error', 'Invalid Code!');
+            //abort(404);
+            $staff_data = "";
+           return view('app_pages.id', compact('staff_data'));
+
 
 		}else{
-			 Session::flash('message_error', 'Invalid Code!');
-			 $staff_data = " ";
-			 return view('app_pages.id', compact('staff_data'));
+            Session::put('idx', $id);
+            if($staff_data->status == 'Deactivated')
+                $staff_data = "";
+            return view('app_pages.id', compact('id','staff_data'));
 		}
 
 
@@ -401,10 +403,10 @@ class idcardController extends Controller {
 			{
 
 				$user = users::findorfail($id);
-				
+
 				$user_role = roles::where('id',$user->role)->first();
 				$roles = roles::all();
-				
+
 				//dd($roles);
 				return view('app_pages.edit_user', compact('user','user_role','roles'));
 
