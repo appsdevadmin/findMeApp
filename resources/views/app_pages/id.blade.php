@@ -25,7 +25,7 @@
                                 <div class="row">
                                     <div class="col-12" style="text-align: right">
                                         <div>
-                                            <span><img  alt="phone" style="border:0; height:15px; width:15px; " src="{{url('img/emergency-call.png')}}"></span> <span><p><a href="tel:0946081000">0946081000</a></p></span>
+                                            <span><img  alt="phone" style="border:0; height:15px; width:15px; " src="{{url('img/emergency-call.png')}}"></span> &nbsp &nbsp <span><a href="tel:0946081000">0946081000</a></span>
                                         </div>
                                     </div>
                                 </div>
@@ -38,55 +38,39 @@
                                         <br>
                                         <strong> {{$staff_data->first_name }} {{$staff_data->last_name }}
                                             ({{$staff_data->staff_id }})</strong>
+                                        <br>
+                                        <br>
                                     </div>
                                     <!-- /.col -->
                                     <div class="col-sm-8 invoice-col">
                                         <div class ="row">
-                                            <div class="col-sm-1" style="text-align:start">
-                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/telephone.png')}}">
-                                            </div>
-                                            <div class="col-sm-7" style="text-align:left">
-                                                {{$staff_data->ext}}
+                                            <div class="col-sm-8" style="text-align:start">
+                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/telephone.png')}}"> &nbsp &nbsp &nbsp  {{$staff_data->ext}}
                                             </div>
                                         </div>
                                         <div class ="row">
-                                            <div class="col-sm-1" style="text-align:start">
-                                                <img border="0" width="10" alt="phone" style="border:0; height:10px; width:10px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png">
-                                            </div>
-                                            <div class="col-sm-7" style="text-align:left">
-                                                {{$staff_data->mobile}}
+                                            <div class="col-sm-8" style="text-align:start">
+                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> &nbsp &nbsp &nbsp  {{$staff_data->mobile}}
                                             </div>
                                         </div>
                                         <div class ="row">
-                                            <div class="col-sm-1" style="text-align:start">
-                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png">
-                                            </div>
-                                            <div class="col-sm-7" style="text-align:left">
-                                                {{$staff_data->email }}
+                                            <div class="col-sm-8" style="text-align:start">
+                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> &nbsp &nbsp &nbsp  {{$staff_data->email }}
                                             </div>
                                         </div>
                                         <div class ="row">
-                                            <div class="col-sm-1" style="text-align:start">
-                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/structure.png')}}">
-                                            </div>
-                                            <div class="col-sm-7" style="text-align:left">
-                                                {{$staff_data->department_name }}
+                                            <div class="col-sm-8" style="text-align:start">
+                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/structure.png')}}"> &nbsp &nbsp &nbsp  {{$staff_data->department_name }}
                                             </div>
                                         </div>
                                         <div class ="row">
-                                            <div class="col-sm-1" style="text-align:start">
-                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/office-building.png')}}">
-                                            </div>
-                                            <div class="col-sm-7" style="text-align:left">
-                                                {{$staff_data->sbu }}
+                                            <div class="col-sm-8" style="text-align:start">
+                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/office-building.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->sbu }}
                                             </div>
                                         </div>
                                         <div class ="row">
-                                            <div class="col-sm-1" style="text-align:start">
-                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png">
-                                            </div>
-                                            <div class="col-sm-7" style="text-align:left">
-                                                {{$staff_data->sbu }}, {{$staff_data->loc_description }}
+                                            <div class="col-sm-8" style="text-align:start">
+                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu }}, {{$staff_data->loc_description }}
                                             </div>
                                         </div>
                                         <div class ="row">
