@@ -1,7 +1,7 @@
 @extends('layouts.id_layout')
 @section('content')
-<div>
-    <div class="content-wrapper">
+<section class="content">
+    <div>
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -14,7 +14,7 @@
         </div>
         <!-- /.content-header -->
         <!-- Main content -->
-        <section class="content">
+        <div class="content">
             @if($staff_data != "")
                 <div class="container-fluid">
                     <!-- Main row -->
@@ -74,25 +74,43 @@
                                                 <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu }}, {{$staff_data->loc_description }}
                                             </div>
                                         </div>
-                                        <div class ="row">
-                                            <div class="col-sm-8" style="text-align:center">
-                                                <span>
-											        <a href="https://web.facebook.com/nnpclimited/" target="_blank" rel="noopener">
-												    <img border="0" width="15" alt="facebook icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/facebook.png"></a>
-											    </span>
-                                                <span>
-												    <a href="https://twitter.com/nnpclimited" target="_blank" rel="noopener">
-													<img border="0" width="15" alt="twitter icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/twitter.png"></a>
-											    </span>
-                                                <span>
-											        <a href="https://www.instagram.com/nnpclimited/" target="_blank" rel="noopener">
-												    <img border="0" width="15" alt="instagram icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/instagram.png"></a>
-											    </span>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <!-- /.row -->
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="row">
+                                            <div class="col-sm-2" style="margin-left: 20%">
+                                                <div class="text-center">
+                                                    <a href="tel:{{$staff_data->mobile ??''}}" class="btn">
+                                                        <img width="13" alt="phone" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> Call
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2" style="margin-left: 20%">
+                                                <div class="text-center">
+                                                    <a href = "mailto:{{$staff_data->email ?? ''}}" class="btn">
+                                                        <img width="13" alt="phone" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> Email
+                                                    </a>
+                                                </div>
+                                            </div><!-- /.col -->
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8" style="text-align:center">
+                                        <span>
+                                            <a href="https://web.facebook.com/nnpclimited/" target="_blank" rel="noopener">
+                                            <img border="0" width="15" alt="facebook icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/facebook.png"></a>
+                                        </span>
+                                        <span>
+                                            <a href="https://twitter.com/nnpclimited" target="_blank" rel="noopener">
+											<img border="0" width="15" alt="twitter icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/twitter.png"></a>
+                                        </span>
+                                        <span>
+                                            <a href="https://www.instagram.com/nnpclimited/" target="_blank" rel="noopener">
+                                            <img border="0" width="15" alt="instagram icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/instagram.png"></a>
+                                        </span>
+                                    </div>
+                                </div>
                                 <hr>
                             </div>
                         </div><!-- /.col -->
@@ -126,7 +144,7 @@
                     </div>
                 </div>
             @endif
-        </section>
+        </div>
     </div><!-- /.row (main row) -->
-</div>    
+</section>
 @stop
