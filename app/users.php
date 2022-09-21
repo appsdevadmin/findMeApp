@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class users extends Model {
 
-    protected $table = 'staffAdmins';
+    protected $table = 'users';
 
 	protected $fillable=['id_no','access','role','name','email'];
 

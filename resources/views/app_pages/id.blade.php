@@ -1,5 +1,6 @@
 @extends('layouts.id_layout')
 @section('content')
+<div>
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -127,4 +128,5 @@
             @endif
         </section>
     </div><!-- /.row (main row) -->
+</div>    
 @stop
