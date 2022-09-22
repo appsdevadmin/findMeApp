@@ -34,8 +34,8 @@ Route::get('home/menu', [Controllers\idcardController::class, 'home']);
 //LOGIN
 Route::get('login', [Controllers\loginController::class, 'login']);
 Route::post('login', [Controllers\loginController::class, 'stafflogin']);
-	
-	
+
+
 //404//
 Route::get('error_page', [Controllers\loginController::class, 'error_page']);
 
@@ -44,6 +44,7 @@ Route::get('home/logout', [Controllers\loginController::class, 'logout']);
 
 //HOME//
 Route::get('home', [Controllers\idcardController::class, 'home']);
+Route::get('generateVcard/{id}', [Controllers\idcardController::class, 'generateVcard']);
 
 
 //MANAGE USERS//
