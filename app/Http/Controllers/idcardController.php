@@ -133,6 +133,7 @@ class idcardController extends Controller {
 
 			$description = $input['description'];
 			$staff_id = $input['staff_id'];
+           // dd($staff_id);
 			$input['updated_by'] = $username;
 
 			card_status::create($input);
@@ -315,8 +316,9 @@ class idcardController extends Controller {
 
 	}
 
-	public function search_staff($id)
+	public function search_staff(Request $request)
 	{
+        //dd($request->all());
 		$username = Session::get('username');
 		if (Session::has('username'))
 		{
@@ -326,10 +328,11 @@ class idcardController extends Controller {
 
 			$input = $request->all();
 			$staff_id = $input['staff_id'];
-
-				$staff_data = staff_data::find($id);
+               // dd($staff_id);
+				$staff_data = staff_data::where('staff_id',$staff_id)->get()->first();
+                //dd($staff_data);
 				if($staff_data != ""){
-					return view('app_pages.card', compact('id','staff_data'));
+					return view('app_pages.card', compact('staff_data'));
 
 				}else{
 					 Session::flash('message_error', 'Invalid ID!');

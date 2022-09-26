@@ -303,7 +303,7 @@
 				  <!-- textarea -->
 				  <div class="form-group">
 					<label>Staff ID</label>
-					<input type="text" id="staff_id" name="staff_id" class="form-control" max="5" min="5" placeholder="..." required></textarea>
+					<input type="text" id="staff_id" name="staff_id" class="form-control" max="5" min="5" placeholder="Enter Staff ID" required />
 				  </div>
 				</div>
 
@@ -313,7 +313,7 @@
               <button type="submit" class="btn btn-success">Search</button>
               <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
             </div>
-			{!! Form::hidden('staff_id', $staff_data->staff_id ?? '')!!}
+{{--			{!! Form::hidden('staff_id', $staff_data->staff_id ?? '')!!}--}}
 			{!! Form::close() !!}
 
           </div>
