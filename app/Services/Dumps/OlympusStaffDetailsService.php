@@ -3,17 +3,17 @@
 
 namespace App\Services\Dumps;
 
-
-use App\Imports\EcmDumpImport;
-use App\Models\EcmDump;
 use App\Models\OlympusStaffDump;
 use App\Services\Olympus\OlympusWebService;
+use App\Services\Olympus\Requests\GetBasicStaffDetailsRequest;
 use App\Services\ProfileService;
+use App\staff_data;
 use App\Traits\ResponseTrait;
 use App\Traits\UtilsTrait;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
 use Throwable;
@@ -25,9 +25,12 @@ class OlympusStaffDetailsService
 {
 
     use ResponseTrait;
+    public $basicStaffDetails;
 
-    public function __construct(protected OlympusWebService $olympusWebService)
-    {}
+    public function __construct()
+    {
+        $this->basicStaffDetails = new GetBasicStaffDetailsRequest();
+    }
 
     public function processRoutineOlympusStaffDetailsDump(): JsonResponse
     {
@@ -35,7 +38,7 @@ class OlympusStaffDetailsService
 
         try {
 
-            $all_staff = $this->olympusWebService->getBasicStaffDetails();
+            $all_staff = (object)$this->basicStaffDetails->init();
             //check if file is empty
             if (!$all_staff){
                 return response()->json([
@@ -45,27 +48,33 @@ class OlympusStaffDetailsService
             }
 
             return DB::transaction(static function () use ($all_staff) {
-                //clear table
-                DB::table('olympus_staff_dump')->delete();
                 //run through file
                 foreach ($all_staff as $value)
                 {
-                    $olympus_staff = new OlympusStaffDump();
-                    $olympus_staff->staff_id = $value['staff_id'];
-                    $olympus_staff->last_name = $value['last_name'];
-                    $olympus_staff->first_name = $value['first_name'];
-                    $olympus_staff->middle_name = $value['middle_name'];
-                    $olympus_staff->designation = $value['designation'];
-                    $olympus_staff->sbu = $value['sbu'];
-                    $olympus_staff->grade_level = $value['grade'];
-                    $olympus_staff->division_code = $value['division_code'];
-                    $olympus_staff->dept_code = $value['department_code'];
-                    $olympus_staff->head_id = $value['dept_head_id'];
-                    $olympus_staff->employment_type = $value['employment_type'];
-                    $olympus_staff->save();
+                    $staff_data = staff_data::query()
+                        ->where('staff_id', $value->staff_id)
+                        ->update([
+                            'first_name' => $value->firstname,
+                            'last_name' => $value->surname,
+                            'middle_name' => $value->middle_name,
+                            'sex' => $value->sex,
+                            'dob' => $value->dob,
+                            'grade_code' => $value->grade,
+                            'designation' => $value->designation,
+                            'phone' => $value->phone,
+                            'mobile' => $value->mobile,
+                            'office' => $value->office,
+                            'ext' => $value->ext,
+                            'email' => $value->emailaddress,
+                            'loc_description' => $value->location,
+                            'department_name' => $value->department,
+                            'division_fullname' => $value->division_name,
+                            'sbu' => $value->sbu,
+                            'category' => $value->category,
+                        ]);
                 }
 
-                activity('OLYMPUS_DUMP')->log('OLYMPUS DUMP COMPLETED'); //Log;
+                Log::info('OLYMPUS DUMP COMPLETED'); //Log;
 
                 return response()->json([
                     'status'=>true,
@@ -77,7 +86,7 @@ class OlympusStaffDetailsService
             if(self::hasDebug()){
                 //This section should be logged for debugging.
                 $exceptionResponse = self::getExceptionResponse($exception);
-                activity('OLYMPUS_DUMP')->log($exceptionResponse); //Log;
+                Log::error($exceptionResponse); //Log;
                 return response()->json([
                     'status'=>false,
                     'message'=>'Exception. Please check the log'

@@ -8,7 +8,7 @@ class GetBasicStaffDetailsRequest extends Request
 {
     protected string $path = 'GetBasicStaffDetails';
 
-    public function init($staff_id): array
+    public function init($staff_id = ""): array
     {
         $params = [
             'staffID' => $staff_id,
@@ -17,7 +17,9 @@ class GetBasicStaffDetailsRequest extends Request
         if (! $staff) {
             return [];
         }
-
+        if (isset($response[0])){
+            return StaffBasicDetailsResource::collection($response)->resolve();
+        }
         return (new StaffBasicDetailsResource($staff))->resolve();
     }
 }

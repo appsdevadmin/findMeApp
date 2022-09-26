@@ -43,12 +43,12 @@
                                     <div class="col-sm-8 invoice-col">
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
-                                                <img  alt="blood_group" style="border:0; height:20px; width:20px; " src="{{url('img/blood drop.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->blood_group  ?? "-"}}&nbsp;&nbsp;
+                                                <img  alt="blood_group" style="border:0; height:13px; width:13px; " src="{{url('img/blood drop.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->blood_group  ?? "-"}}&nbsp;&nbsp;
                                             </div>
                                         </div>
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
-                                                <img  alt="height" style="border:0; height:15px; width:20px; " src="{{url('img/height.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->height . 'm' ?? "-"}}
+                                                <img  alt="height" style="border:0; height:13px; width:13px; " src="{{url('img/height.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->height . 'm' ?? "-"}}
                                             </div>
                                         </div>
                                         <div class ="row">

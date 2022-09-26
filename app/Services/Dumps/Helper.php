@@ -3,7 +3,7 @@
 namespace App\Services\Dumps;
 
 use Exception;
-use Storage;
+use Illuminate\Support\Facades\Storage;
 
 trait Helper
 {

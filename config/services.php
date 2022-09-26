@@ -32,5 +32,10 @@ return [
     'olympus' => [
         'base_url' => env('OLYMPUS_BASE_URL', 'http://10.0.48.74:777/Servicenew.asmx/'),
     ],
+    'chq_webhost' => [
+        'host' => env('CHQ_WEBHOST_HOST'),
+        'username' => env('CHQ_WEBHOST_USERNAME'),
+        'password' => env('CHQ_WEBHOST_PASSWORD'),
+    ],
 
 ];

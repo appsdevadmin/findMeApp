@@ -17,13 +17,19 @@ class StaffBasicDetailsResource extends JsonResource
             'grade' => $this['GRADE_CODE'] ?? null,
             'emailaddress' => $this['EMAIL'] ?? null,
             'sbu' => $this['SBU'] ?? null,
+            'category' => $this['CATEGORY'] ?? null,
             'location' => ucwords(strtolower($this['LOCATION'] ?? null)),
             'department' => ucwords(strtolower($this['DEPARTMENT_FULLNAME'] ?? null)),
-            'department_code' => $this['DEPT_CODE'] ?? null,
+            //'department_code' => $this['DEPT_CODE'] ?? null,
             'division_name' => ucwords(strtolower($this['DIVISION_FULLNAME'] ?? null)),
-            'designation' => $this['DESIGNATION'] ?? '',
-            'building' => $this['BUILDING'] ?? '',
-            'extension' => $this['MOBILE'] ?? '',
+            'designation' => ucwords(strtolower($this['DESIGNATION'] ?? '')),
+            'building' => ucwords(strtolower($this['BUILDING'] ?? '')),
+            'phone' => $this['PHONE'] ?? '',
+            'extension' => $this['EXT'] ?? '',
+            'mobile' => $this['MOBILE'] ?? '',
+            'office' => $this['OFFICE'] ?? '',
+            'dob' => $this['DOB'] ?? '',
+            'sex' => ucwords(strtolower($this['SEX'] ?? '')),
         ];
     }
 }
