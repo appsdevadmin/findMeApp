@@ -125,9 +125,9 @@
                         </div><!-- /.col -->
                         <div class="col-sm-4">
                             <div class="text-left">
-                                <a href="/generateVcard/{{$staff_data->staff_id}}" class="btn btn-sm btn-primary">
+                                 <a href="/generateVcard/{{$staff_data->staff_id}}" class="btn btn-sm btn-primary">
                                     <i class="fas fa-user-plus"></i> Download Vcard
-                                </a>
+                                 </a>
                             </div>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
