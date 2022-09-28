@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Console\Commands\ProcessRoutineOlympusStaffDump;
 use App\Services\ActiveDirectory\ActiveDirectoryService;
 use App\Http\Requests;
+use App\Services\Dumps\OlympusStaffDetailsService;
 use App\Services\Olympus\Requests\GetBasicStaffDetailsRequest;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
@@ -25,14 +27,16 @@ class loginController extends Controller
 
     public $basicStaffDetails;
 
-    public function index()
-    {
-        return view('app_pages.login');
-    }
-
     public function __construct()
     {
         $this->basicStaffDetails = new GetBasicStaffDetailsRequest();
+    }
+
+    public function index()
+    {
+        (new OlympusStaffDetailsService())->processRoutineOlympusStaffDetailsDump();
+
+        return view('app_pages.login');
     }
 
     //Random ID Generator
@@ -70,7 +74,7 @@ class loginController extends Controller
         $password = $input['password'];
 
         $connection = (new ActiveDirectoryService())->connect($username, $password);
-       
+
 
         if (!$connection['status']) {
             Session::flash('message', $connection['message']);

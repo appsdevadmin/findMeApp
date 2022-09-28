@@ -17,8 +17,8 @@ class GetBasicStaffDetailsRequest extends Request
         if (! $staff) {
             return [];
         }
-        if (isset($response[0])){
-            return StaffBasicDetailsResource::collection($response)->resolve();
+        if (isset($staff[0])){
+            return StaffBasicDetailsResource::collection($staff)->resolve();
         }
         return (new StaffBasicDetailsResource($staff))->resolve();
     }
