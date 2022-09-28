@@ -118,7 +118,7 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="text-left">
-                                <a href="/" class="btn btn-sm btn-primary">
+                                <a href="/" class="btn btn-sm btn-success">
                                     <i class="fas fa-user"></i> View Profile
                                 </a>
                             </div>

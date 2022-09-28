@@ -45,7 +45,7 @@ class OlympusStaffDetailsService
                 //run through file
                 foreach ($all_staff as $value)
                 {
-                   // return DB::transaction(static function () use ($all_staff, $value) {
+                    return DB::Transaction(static function () use ($all_staff, $value) {
                         $updateStaff= staff_data::query()
                             ->where('staff_id', $value['staff_id'])->first();
                         //dd($updateStaff);
@@ -92,7 +92,7 @@ class OlympusStaffDetailsService
 //                                'category' => $value['category'],
 //                                ]);
                             }
-                   // });
+                    });
                 }
 
                 Log::info('OLYMPUS DUMP COMPLETED'); //Log;

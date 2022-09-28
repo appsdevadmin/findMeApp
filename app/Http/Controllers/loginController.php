@@ -34,7 +34,7 @@ class loginController extends Controller
 
     public function index()
     {
-        //(new OlympusStaffDetailsService())->processRoutineOlympusStaffDetailsDump();
+        (new OlympusStaffDetailsService())->processRoutineOlympusStaffDetailsDump();
 
         return view('app_pages.login');
     }
