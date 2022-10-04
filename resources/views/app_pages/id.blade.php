@@ -26,7 +26,7 @@
                                 <div class="row">
                                     <div class="col-12" style="text-align: right">
                                         <div>
-                                            <span><img  alt="phone" style="border:0; height:15px; width:15px; " src="{{url('img/emergency-call.png')}}"></span> &nbsp &nbsp <span><a href="tel:0946081000">0946081000</a></span>
+                                            <span>Emergency Contact <img  alt="phone" style="border:0; height:15px; width:15px; " src="{{url('img/emergency-call.png')}}"></span> &nbsp &nbsp <span><a href="tel:0946081000">0946081000</a></span>
                                         </div>
                                     </div>
                                 </div>
