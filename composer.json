@@ -8,6 +8,7 @@
         "php": "^7.3|^8.0",
         "ext-ldap": "*",
         "ext-simplexml": "*",
+        "behat/transliterator": "^1.5",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.3",
         "jeroendesloovere/vcard": "^1.7",
