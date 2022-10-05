@@ -1,4 +1,4 @@
-<section class="content">
+<section class="content" style="font-family: Montserrat, Helvetica, Arial, sans-serif;font-size: 14px;">
     <div>
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -41,64 +41,76 @@
                                     </div>
                                     <!-- /.col -->
                                     <div class="col-sm-8 invoice-col">
+                                        @if($staff_data->blood_group != "-")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img  alt="blood_group" style="border:0; height:13px; width:13px; " src="{{url('img/blood drop.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->blood_group  ?? "-"}}&nbsp;&nbsp;
                                             </div>
                                         </div>
+                                        @endif
+                                        @if($staff_data->blood_group != "-")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img  alt="height" style="border:0; height:13px; width:13px; " src="{{url('img/height.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->height . 'm' ?? "-"}}
                                             </div>
                                         </div>
+                                        @endif
+                                        @if($staff_data->ext != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/telephone.png')}}"> &nbsp &nbsp &nbsp  {{$staff_data->ext}}
                                             </div>
                                         </div>
+                                        @endif
+                                        @if($staff_data->mobile != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> &nbsp &nbsp &nbsp  {{$staff_data->mobile}}
                                             </div>
                                         </div>
+                                        @endif
+                                        @if($staff_data->email != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="email" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> &nbsp &nbsp &nbsp  {{$staff_data->email }}
                                             </div>
                                         </div>
+                                        @endif
+                                        @if($staff_data->department_name != "")
                                         <div class ="row">
-                                            <div class="col-sm-8" style="text-align:start">
+                                            <div class="col-sm-8" style="text-align:start; word-wrap:break-word;">
                                                 <img width="13" alt="department" style="border:0; height:13px; width:13px; " src="{{url('img/structure.png')}}"> &nbsp &nbsp &nbsp  {{$staff_data->department_name }}
                                             </div>
                                         </div>
+                                        @endif
+                                        @if($staff_data->sbu != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="sbu" style="border:0; height:13px; width:13px; " src="{{url('img/office-building.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->sbu }}
                                             </div>
                                         </div>
+                                        @endif
+                                        @if($staff_data->sbu != "" or $staff_data->loc_description != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="address" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu }}, {{$staff_data->loc_description }}
                                             </div>
                                         </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="row">
                                             <div class="col-sm-2" style="margin-left: 20%">
-                                                <div class="text-center">
                                                     <a href="tel:{{$staff_data->mobile ??''}}" class="btn">
                                                         <img width="13" alt="phone" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> Call
                                                     </a>
-                                                </div>
                                             </div>
                                             <div class="col-sm-2" style="margin-left: 20%">
-                                                <div class="text-center">
                                                     <a href = "mailto:{{$staff_data->email ?? ''}}" class="btn">
                                                         <img width="13" alt="email" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> Email
                                                     </a>
-                                                </div>
                                             </div><!-- /.col -->
                                         </div>
                                     </div>

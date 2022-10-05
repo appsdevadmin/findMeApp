@@ -16,9 +16,9 @@
 
     <!-- Google Fonts -->
     <!--link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" -->
-	
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -38,7 +38,7 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
-	
+
 	  <link rel="stylesheet" href="{{ asset('admin_assets/plugins/fontawesome-free/css/all.min.css') }}">
 	  <!-- Ionicons -->
 	  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -73,7 +73,7 @@
             #print_div{display:block;margin:20px;}
             #no_print{display:block;margin:20px;}
         }
-		
+
 		.table > thead > tr > th {
 			font-size: 14px;
 		}
@@ -81,7 +81,7 @@
 			font-size: 14px;
 		}
     </style>
-	
+
 	 <style>
         * {
             box-sizing: border-box;
@@ -185,10 +185,10 @@
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-	
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-  
+
 
 
 </head>
@@ -196,15 +196,13 @@
 <body onload="myFunction();">
 
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex justify-content-between">
-
+<header id="header" class="fixed-top d-flex align-items-center" style="background-color: #1A2F3E">
+    <div class="container d-flex justify-content-between" style="margin-left: 10px">
         <div class="logo">
             <h1><a href="/id"></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
-            <h4 class="animate__animated animate__headShake"><a href="/"><img src="{{asset('/img/NNPC_S2.png') }}" alt="" class="img-fluid"> <!-- NNPC Limited --></a></h4>
+            <h4 class="animate__animated animate__headShake"><a href="/"><img src="{{asset('/img/NNPC_S2.png') }}" width="100" height="80" alt="" class="img-fluid"> <!-- NNPC Limited --></a></h4>
         </div>
-
     </div>
 </header><!-- End Header -->
 
@@ -216,21 +214,9 @@
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
-<footer id="footer">
-    <!--div class="footer-top">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-info">
-                        <h5 class="animate__animated animate__bounceInDown">NMSL Questionnaire</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div-->
+<footer id="footer" style="background-color: #1A2F3E">
             <div class="container">
-                <div class="copyright"> 
+                <div class="copyright">
                     &copy; Copyright <strong><span>NNPC Limited</span></strong>. All Rights Reserved
                 </div>
                 <div class="credits">
@@ -238,7 +224,7 @@
                     <!-- You can delete the links only if you purchased the pro version. -->
                     <!-- Licensing information: https://bootstrapmade.com/license/ -->
                     <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/maxim-free-onepage-bootstrap-theme/ -->
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>	<br/>				
+                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>	<br/>
 					<!-- a href="/login"><b>🔐 Login</b></a -->
                 </div>
             </div>
@@ -266,8 +252,8 @@
 <script src="{{ asset('admin_assets/dist/js/demo.js') }}"></script>
 
 <script type="text/javascript">
-    
-// Enable button 
+
+// Enable button
 function enable_submit() {
   $('button.submit').disabled = false;
   $('button.submit').addClass('not-disabled');
@@ -279,7 +265,7 @@ function disable_submit() {
   $('button.submit').removeClass('not-disabled');
 }
 
-// Display feedback after rating 
+// Display feedback after rating
 $('.rating__input').on('click', function () {
   var rating = this['value'];
   $('.rating__label').removeClass('active');

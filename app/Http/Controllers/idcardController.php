@@ -86,7 +86,7 @@ class idcardController extends Controller {
         //return $vcard->getOutput();
 
         // return vcard as a download
-        return $vcard->download();
+        return $vcard->save();
 
         // save vcard on disk
         //$vcard->setSavePath('/path/to/directory');

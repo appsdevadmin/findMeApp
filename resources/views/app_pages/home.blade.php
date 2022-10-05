@@ -4,7 +4,7 @@
 {{--    Staff info View--}}
     @include ('app_pages/_card')
 {{--    Menu Options--}}
-{{--    @include('app_pages/_cardMenu')--}}
+    @include('app_pages/_cardMenu')
 	<div class="modal fade" id="modal-lg">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">

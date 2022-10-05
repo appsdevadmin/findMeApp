@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>NNPC Limted</title>
+  <title>NNPC Limited</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
@@ -187,10 +187,9 @@
 
    </nav>
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #1A2F3E">
     <!-- Brand Logo -->
-    <a href="/home/menu" class="brand-link">
-      <!--img src="{{ asset('img/logo.png') }}" alt="AutoGas NG" class="brand-image img-circle elevation-3" style="opacity: .8"-->
+    <a href="/home/menu" class="brand-link" style="background-color: #1A2F3E">
       <span class="brand-text font-weight-light"><img src="{{asset('img/NNPC_S2.png') }}" alt="" class="img-fluid" width="100" height="80"><h4></h4></span>
     </a>
 	<br/>
@@ -256,10 +255,8 @@
                   <p>Search Staff</p>
                 </a>
               </li>
-
             </ul>
           </li>
-
 		 @endif
          <li class="nav-item has-treeview menu-close">
             <a href="/home/logout" class="nav-link">
@@ -324,8 +321,8 @@
       <!-- /.modal -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2022<a href="#"> NNPC Limted</a>.</strong>
+  <footer class="main-footer" style="background-color: #1A2F3E">
+    <strong>Copyright &copy; 2022<a href="#"> NNPC Limited</a>.</strong>
     All rights reserved.
     <!--div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.0.5

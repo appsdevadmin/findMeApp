@@ -1,6 +1,6 @@
-<section class="content">
+<section class="content" style="font-family: Montserrat, Helvetica, Arial, sans-serif;font-size: 14px;">
 <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-8" style="margin-left: 10px">
         @if($staff_data->status == "Deactivated")
             <h5><i class="fas fa-eye-slash"></i> This ID Card is deactivated</h5>
         @else

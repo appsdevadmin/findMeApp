@@ -1,6 +1,6 @@
 @extends('layouts.id_layout')
 @section('content')
-<section class="content">
+<section class="content" style="font-family: Montserrat, Helvetica, Arial, sans-serif;font-size: 14px;">
     <div>
         <!-- Content Header (Page header) -->
         <div class="content-header">
@@ -80,16 +80,16 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="row">
-                                            <div class="col-sm-2" style="margin-left: 20%">
-                                                <div class="text-center">
-                                                    <a href="tel:{{$staff_data->mobile ??''}}" class="btn">
+                                            <div class="col-sm-2" >
+                                                <div class="text-center" style="margin-left: 20px">
+                                                    <a href="tel:{{$staff_data->mobile}}" class="btn">
                                                         <img width="13" alt="phone" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> Call
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-2" style="margin-left: 20%">
-                                                <div class="text-center">
-                                                    <a href = "mailto:{{$staff_data->email ?? ''}}" class="btn">
+                                            <div class="col-sm-2">
+                                                <div class="text-center" style="margin-left: 20px">
+                                                    <a href ="mailto:{{$staff_data->email}}" class="btn">
                                                         <img width="13" alt="phone" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> Email
                                                     </a>
                                                 </div>
@@ -121,13 +121,9 @@
                                 <a href="/" class="btn btn-sm btn-success">
                                     <i class="fas fa-user"></i> View Profile
                                 </a>
-                            </div>
-                        </div><!-- /.col -->
-                        <div class="col-sm-4">
-                            <div class="text-left">
-                                 <a href="/generateVcard/{{$staff_data->staff_id}}" class="btn btn-sm btn-primary">
+                                <a href="/generateVcard/{{$staff_data->staff_id}}" class="btn btn-sm btn-primary">
                                     <i class="fas fa-user-plus"></i> Download Vcard
-                                 </a>
+                                </a>
                             </div>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
