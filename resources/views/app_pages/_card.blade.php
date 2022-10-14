@@ -30,7 +30,7 @@
                                 <hr>
                                 <div class="row invoice-info">
                                     <div class="col-sm-4 invoice-col" style = "text-align:center">
-                                        <img src="https://www.nnpcgroup.com/assets/images/new-nnpc-logo.png" alt="logo" role="presentation" width="80">
+                                    <img src="{{asset('/Passport_Photos/'.$staff_data->staff_id.'.jpg')}}" alt="Staff Photo" width="200" height="200">
                                         <br>
                                         <br>
                                         <strong> {{$staff_data->first_name }} {{$staff_data->last_name }}
@@ -91,11 +91,19 @@
                                         </div>
                                         @endif
                                         @if($staff_data->sbu != "" or $staff_data->loc_description != "")
-                                        <div class ="row">
-                                            <div class="col-sm-8" style="text-align:start">
-                                                <img width="13" alt="address" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu }}, {{$staff_data->loc_description }}
-                                            </div>
-                                        </div>
+                                            @if($staff_data->sbu == "NNPC Limited")
+                                                <div class ="row">
+                                                    <div class="col-sm-8" style="text-align:start">
+                                                        <img width="13" alt="address" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  CHQ, {{$staff_data->loc_description ?? ''}}
+                                                    </div>
+                                                </div>
+                                            @else
+                                                <div class ="row">
+                                                    <div class="col-sm-8" style="text-align:start">
+                                                        <img width="13" alt="address" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu ?? ''}}, {{$staff_data->loc_description ?? ''}}
+                                                    </div>
+                                                </div>
+                                            @endif
                                         @endif
                                     </div>
                                 </div>

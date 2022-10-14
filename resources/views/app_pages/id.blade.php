@@ -34,12 +34,11 @@
                                 <hr>
                                 <div class="row invoice-info">
                                     <div class="col-sm-4 invoice-col" style = "text-align:center">
-                                        <img src="https://www.nnpcgroup.com/assets/images/new-nnpc-logo.png" alt="logo" role="presentation" width="80">
+                                        <img src="{{asset('/Passport_Photos/'.$staff_data->staff_id.'.jpg')}}" alt="Staff Photo" width="200" height="200">
                                         <br>
                                         <br>
                                         <strong> {{$staff_data->first_name }} {{$staff_data->last_name }}
                                             ({{$staff_data->staff_id }})</strong>
-                                        <br>
                                         <br>
                                     </div>
                                     <!-- /.col -->
@@ -69,11 +68,19 @@
                                                 <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/office-building.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->sbu }}
                                             </div>
                                         </div>
+                                        @if($staff_data->sbu == "NNPC Limited")
+                                        <div class ="row">
+                                            <div class="col-sm-8" style="text-align:start">
+                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  CHQ, {{$staff_data->loc_description }}
+                                            </div>
+                                        </div>
+                                        @else
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu }}, {{$staff_data->loc_description }}
                                             </div>
                                         </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <!-- /.row -->
@@ -121,9 +128,9 @@
                                 <a href="/" class="btn btn-sm btn-success">
                                     <i class="fas fa-user"></i> View Profile
                                 </a>
-                                <a href="/generateVcard/{{$staff_data->staff_id}}" class="btn btn-sm btn-primary">
+                                <!-- <a href="/generateVcard/{{$staff_data->staff_id}}" class="btn btn-sm btn-primary">
                                     <i class="fas fa-user-plus"></i> Download Vcard
-                                </a>
+                                </a> -->
                             </div>
                         </div><!-- /.col -->
                     </div><!-- /.row -->

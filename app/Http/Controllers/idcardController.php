@@ -34,6 +34,7 @@ class idcardController extends Controller {
 	{
 
 		$staff_data = staff_data::where('unique_id',$id)->first();
+		//dd($staff_data->staff_id.'.jpg');
 
 		if(!$staff_data){
             //$staff_details = (object)$this->basicStaffDetails->init($staff_data->staff_id);
