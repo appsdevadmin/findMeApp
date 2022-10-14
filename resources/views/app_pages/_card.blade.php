@@ -30,7 +30,7 @@
                                 <hr>
                                 <div class="row invoice-info">
                                     <div class="col-sm-4 invoice-col" style = "text-align:center">
-                                    <img src="{{asset('/Passport_Photos/'.$staff_data->staff_id.'.jpg')}}" alt="Staff Photo" width="200" height="200">
+                                    <img src="{{asset('/Passport_Photos/'.'S. '.$staff_data->staff_id.'.jpg')}}" style="border-radius:50%" alt="Staff Photo" width="200" height="200">
                                         <br>
                                         <br>
                                         <strong> {{$staff_data->first_name }} {{$staff_data->last_name }}
