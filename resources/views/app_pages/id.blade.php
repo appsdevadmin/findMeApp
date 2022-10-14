@@ -34,7 +34,7 @@
                                 <hr>
                                 <div class="row invoice-info">
                                     <div class="col-sm-4 invoice-col" style = "text-align:center">
-                                        <img src="{{asset('/Passport_Photos/'.$staff_data->staff_id.'.jpg')}}" alt="Staff Photo" width="200" height="200">
+                                        <img src="{{asset('/Passport_Photos/'.'S. '.$staff_data->staff_id.'.jpg')}}" style="border-radius:50%" alt="Staff Photo" width="200" height="200">
                                         <br>
                                         <br>
                                         <strong> {{$staff_data->first_name }} {{$staff_data->last_name }}
@@ -43,43 +43,55 @@
                                     </div>
                                     <!-- /.col -->
                                     <div class="col-sm-8 invoice-col">
+                                        @if($staff_data->ext != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/telephone.png')}}"> &nbsp &nbsp &nbsp  {{$staff_data->ext}}
                                             </div>
                                         </div>
+                                        @endif
+                                        @if($staff_data->mobile != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> &nbsp &nbsp &nbsp  {{$staff_data->mobile}}
                                             </div>
                                         </div>
+                                        @endif
+                                        @if($staff_data->email != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> &nbsp &nbsp &nbsp  {{$staff_data->email }}
                                             </div>
                                         </div>
+                                        @endif
+                                        @if($staff_data->department_name != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/structure.png')}}"> &nbsp &nbsp &nbsp  {{$staff_data->department_name }}
                                             </div>
                                         </div>
+                                        @endif
+                                        @if($staff_data->sbu != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
                                                 <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/office-building.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->sbu }}
                                             </div>
                                         </div>
-                                        @if($staff_data->sbu == "NNPC Limited")
-                                        <div class ="row">
-                                            <div class="col-sm-8" style="text-align:start">
-                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  CHQ, {{$staff_data->loc_description }}
+                                        @endif
+                                        @if($staff_data->sbu != "" or $staff_data->loc_description != "")
+                                            @if($staff_data->sbu == "NNPC Limited")
+                                            <div class ="row">
+                                                <div class="col-sm-8" style="text-align:start">
+                                                    <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  CHQ, {{$staff_data->loc_description }}
+                                                </div>
                                             </div>
-                                        </div>
-                                        @else
-                                        <div class ="row">
-                                            <div class="col-sm-8" style="text-align:start">
-                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu }}, {{$staff_data->loc_description }}
+                                            @else
+                                            <div class ="row">
+                                                <div class="col-sm-8" style="text-align:start">
+                                                    <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu }}, {{$staff_data->loc_description }}
+                                                </div>
                                             </div>
-                                        </div>
+                                            @endif
                                         @endif
                                     </div>
                                 </div>
