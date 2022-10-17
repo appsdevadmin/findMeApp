@@ -20,18 +20,18 @@
     <!-- /.content-header -->
 	
     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
+<section class="content">
+  <div class="container-fluid">
         <!-- Info boxes -->
-        <div class="row">
+    <div class="row">
 				
 <!-- DataTales Example -->
-<div class="container-fluid">
+    <div class="container-fluid">
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">Manage Administrators</h6>
-			  <hr/>
-			   <a href="/create_user/menu" class="btn btn-success btn-icon-split btn-sm">
+			        <hr/>
+			        <a href="/create_user/menu" class="btn btn-success btn-icon-split btn-sm">
                     <span class="icon text-white-50">
                       <i class="fas fa-check"></i>
                     </span>
@@ -40,72 +40,66 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                 <table class="table table-bordered table-striped" id="dataTable" >
                   <thead>
                     <tr>
-						<th>S/No</th>
-						<th>Staff ID</th>
-						<th>Name</th>
-						<th>Email</th>
-						<th hidden></th>
-						<th>Role</th>
-						<th>Options</th>
+                      <th>S/No</th>
+                      <th>Staff ID</th>
+                      <th>Name</th>
+                      <th hidden></th>
+                      <th>Role</th>
+                      <th>Options</th>
                     </tr>
                   </thead>
                   <tfoot>
-					<tr>
-						<th>S/No</th>
-						<th>Staff ID</th>
-						<th>Name</th>
-						<th>Email</th>
-						<th hidden></th>
-						<th>Role</th>
-						<th>Options</th>
+                    <tr>
+                      <th>S/No</th>
+                      <th>Staff ID</th>
+                      <th>Name</th>
+                      <th hidden></th>
+                      <th>Role</th>
+                      <th>Options</th>
                     </tr>				  
                   </tfoot>				  
                   <tbody>				  
                    @foreach ($user_details as $a => $user_detail)
-							<tr>
-								<td>{{$a + 1}}</td>
-								<td>{{$user_detail->id_no}}</td>
-								<td>{{$user_detail->name}}</td>
-								<td>{{$user_detail->email}}</td>
-								<td hidden></td>
-								@if($user_detail->role == "1")
-									<td>System Admin</td>
-								
-								@else
-									<td>User</td>
-								@endif
-								<td>
-									<ul class="navbar-nav ml-auto">
-									  <li class="nav-item dropdown">
-										<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										  Dropdown
-										</a>
-										<div class="dropdown-menu dropdown-menu-right animated--fade-in" aria-labelledby="navbarDropdown">
-										
-										<a href="/edit_user/{{$user_detail->id}}" class="dropdown-item">
-											<i class="fas fa-flag"></i> Edit User
-										</a>
-										  
-										</div>
-									  </li>
-									</ul>
-
-								</td>
-							</tr>
-							@endforeach
-					</tbody>
-                </table>
-              </div>
+							      <tr>
+                      <td>{{$a + 1}}</td>
+                      <td>{{$user_detail->id_no}}</td>
+                      <td>{{$user_detail->name}}</td>
+                      <td hidden></td>
+                      @if($user_detail->role == "1")
+                        <td>System Admin</td>
+                      
+                      @else
+                        <td>User</td>
+                      @endif
+								      <td>
+                        <ul class="navbar-nav ml-auto">
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right animated--fade-in" aria-labelledby="navbarDropdown">
+                              <a href="/edit_user/{{$user_detail->id}}" class="dropdown-item">
+                              <i class="fas fa-flag"></i> Edit User
+                              </a> 
+                            </div>
+                          </li>
+                        </ul>
+								      </td>
+							      </tr>
+							    @endforeach
+					      </tbody>
+              </table>
             </div>
-          </div>				
-          </div>			
-		</div>
+          </div>
+        </div>				
+      </div>			
+	  </div>
         <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
-	
+  </div>
+  <!-- container-fluid -->
+</section>
     <!-- /.content -->
 @stop

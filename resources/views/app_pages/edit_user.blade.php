@@ -12,11 +12,7 @@
 			<h6 class="m-0 font-weight-bold text-primary">Edit User : <b>{{$user->name}}</b></h6>
 		</div>
 	<div class="card-body">
-		
 	<fieldset>
-		<legend>
-			Edit User : <b>{{$user->name}}
-		</legend>
 		<div class="form-group">
 			
 			{!! Form::label('name', 'Name')!!}
@@ -30,17 +26,6 @@
 			<div class="form-group">
 			{!! Form::text('email', null, ['class' => 'form-control','data-required'=>'1','required']) !!}
 			</div>		
-			{!! Form::label('phone', 'Phone')!!}
-			<span class="symbol required"></span>
-			<div class="form-group">
-			{!! Form::number('phone', null, ['class' => 'form-control','data-required'=>'1','required']) !!}
-			</div>
-			
-			{!! Form::label('address', 'Address')!!}
-			<span class="symbol required"></span>
-			<div class="form-group">
-			{!! Form::textarea('address', null, ['class' => 'form-control','data-required'=>'1','required']) !!}
-			</div>
 		</div>
 	</fieldset>
 	<fieldset>

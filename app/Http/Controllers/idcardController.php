@@ -103,14 +103,12 @@ class idcardController extends Controller {
 			//dd($idx);
 			if($id != ""){
 				$staff_data = staff_data::where('unique_id',$id)->first();
-                $staff_details = (object)$this->basicStaffDetails->init($staff_data->staff_id);
-
-				return view('app_pages.home', compact('staff_details','id','staff_data'));
+				Session::forget('idx');
+				return view('app_pages.home', compact('id','staff_data'));
+				
 			}
 			else{
-
 				$staff_data = staff_data::where('staff_id',$username)->first();
-
 				return view('app_pages.home', compact('staff_data'));
 			}
 		}
@@ -465,20 +463,20 @@ class idcardController extends Controller {
 
 	public function update_user($id, Request $request)
 	{
+		
 		$username = Session::get('username');
 		if (Session::has('username'))
 		{
 			if (Session::get('role') == "1")
 			{
-
-				$this->validate($request,['id_no' => 'required','role' => 'required']);
-
 				$input = $request->all();
-				$access = $input['access'];
-				$id_no = $input['id_no'];
-				$role = $input['role'];
+				//dd($input);
+				$this->validate($request,['role_id' => 'required', 'active' => 'required']);
+				$access = $input['active'];
+				//$id_no = $input['id_no'];
+				$role = $input['role_id'];
 
-				users::where('id', $id)->update(['id_no' => $id_no,'role' => $role,'access' => $access,'email' => '']);
+				users::where('id', $id)->update(['role' => $role,'access' => $access,'email' => '']);
 
 				Session::flash('message', 'User edited');
 				return redirect('manage_users/menu');
