@@ -201,7 +201,7 @@
         <div class="logo">
             <h1><a href="/id"></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
-            <h4 class="animate__animated animate__headShake"><a href="/"><img src="{{asset('/img/NNPC_S2.png') }}" width="100" height="80" alt="" class="img-fluid"> <!-- NNPC Limited --></a></h4>
+            <h4 class="animate__animated animate__headShake"><a href="/"><img src="{{asset('/img/NNPC_S2.png') }}" alt="" class="img-fluid"> <!-- NNPC Limited --></a></h4>
         </div>
     </div>
 </header><!-- End Header -->
