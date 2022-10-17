@@ -97,7 +97,7 @@
                                 </div>
                                 <!-- /.row -->
                                 <div class="row">
-                                    <div class="col-xs-8 py-3">
+                                    <div class="col-xs-6 py-3">
                                         <div class="row">
                                             <div class="col-sm-2 py-2" style="text-align:center" >
                                                 <div >

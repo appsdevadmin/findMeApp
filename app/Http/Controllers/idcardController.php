@@ -71,48 +71,18 @@ class idcardController extends Controller {
 		$vcard = Vcard::make()
 		->kind(Kind::INDIVIDUAL)
 		//->gender(Gender::MALE)
-		->fullName($staff_data->last_name, $staff_data->first_name)
-		->name($staff_data->last_name, $staff_data->first_name)
+		->fullName($staff_data->last_name,$staff_data->first_name)
+		->name($staff_data->last_name,$staff_data->first_name)
 		->email($staff_data->email)
-		->email($staff_data->email, [Email::WORK, Email::INTERNET])
+		//->email($staff_data->email, [Email::WORK, Email::INTERNET])
 		->tel($staff_data->mobile, [Tel::HOME, Tel::VOICE])
-		->tel($staff_data->ext, [Tel::WORK, Tel::VOICE])
+		->tel(('09460'.$staff_data->ext), [Tel::WORK, Tel::VOICE])
 		->url('https://nnpcgroup.com')
 		->title($staff_data->designation)
 		->org('NNPC Limited');
 		
 		return $vcard;
-        // define vcard
-        //$vcard = new VCard();
-
-        // define variables
-
-
-        // add personal data
-        //$vcard->addName($staff_data->last_name, $staff_data->first_name,);
-
-        // add work data
-        // $vcard->addCompany('NNPC Limited');
-        // $vcard->addJobtitle($staff_data->designation);
-        // $vcard->addRole('Data Protection Officer');
-        // $vcard->addEmail($staff_data->email);
-        // $vcard->addPhoneNumber($staff_data->mobile, 'PREF;WORK');
-        // $vcard->addPhoneNumber($staff_data->ext, 'WORK');
-        // $vcard->addAddress($staff_data->sbu,$staff_data->loc_description );
-        // $vcard->addLabel('Herber Macaulay Way, CBD, Abuja Nigeria');
-        // $vcard->addURL('https://www.nnpcgroup.com');
-
-       // $vcard->addPhoto(__DIR__ . '/landscape.jpeg');
-
-        // return vcard as a string
-        //return $vcard->getOutput();
-
-        // return vcard as a download
-        //return $vcard->download();
-
-        // save vcard on disk
-        //$vcard->setSavePath('/path/to/directory');
-        //$vcard->save();
+        
     }
 
 	public function home()
