@@ -46,21 +46,21 @@
                                         @if($staff_data->ext != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
-                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/telephone.png')}}"> &nbsp &nbsp &nbsp  {{$staff_data->ext}}
+                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/telephone.png')}}"> &nbsp &nbsp &nbsp  <a href="tel:{{'09460'.$staff_data->ext}}">{{$staff_data->ext}}
                                             </div>
                                         </div>
                                         @endif
                                         @if($staff_data->mobile != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
-                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> &nbsp &nbsp &nbsp  {{$staff_data->mobile}}
+                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> &nbsp &nbsp &nbsp <a href="tel:{{$staff_data->mobile}}"> {{$staff_data->mobile}} </a>
                                             </div>
                                         </div>
                                         @endif
                                         @if($staff_data->email != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
-                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> &nbsp &nbsp &nbsp  {{$staff_data->email }}
+                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> &nbsp &nbsp &nbsp  <a href="mailto:{{$staff_data->email}}">{{$staff_data->email }}</a>
                                             </div>
                                         </div>
                                         @endif
@@ -97,37 +97,37 @@
                                 </div>
                                 <!-- /.row -->
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <div class="col-xs-8 py-3">
                                         <div class="row">
-                                            <div class="col-sm-2" >
-                                                <div class="text-center" style="margin-left: 20px">
-                                                    <a href="tel:{{$staff_data->mobile}}" class="btn">
-                                                        <img width="13" alt="phone" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> Call
+                                            <div class="col-sm-2 py-2" style="text-align:center" >
+                                                <div >
+                                                    <a href="tel:{{$staff_data->mobile}}" class="btn btn-success">
+                                                        <img alt="phone" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> Call Me
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-2">
-                                                <div class="text-center" style="margin-left: 20px">
-                                                    <a href ="mailto:{{$staff_data->email}}" class="btn">
-                                                        <img width="13" alt="phone" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> Email
+                                            <div class="col-sm-2 py-2" style="text-align:center">    
+                                                <div>
+                                                    <a href ="mailto:{{$staff_data->email}}" class="btn btn-primary">
+                                                        <img alt="phone" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> Email Me
                                                     </a>
                                                 </div>
                                             </div><!-- /.col -->
+                                            <div class="col-sm-2 py-3">
+                                                <span>
+                                                    <a href="https://web.facebook.com/nnpclimited/" target="_blank" rel="noopener">
+                                                    <img border="0" width="15" alt="facebook icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/facebook.png"></a>
+                                                </span>
+                                                <span>
+                                                    <a href="https://twitter.com/nnpclimited" target="_blank" rel="noopener">
+                                                    <img border="0" width="15" alt="twitter icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/twitter.png"></a>
+                                                </span>
+                                                <span>
+                                                    <a href="https://www.instagram.com/nnpclimited/" target="_blank" rel="noopener">
+                                                    <img border="0" width="15" alt="instagram icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/instagram.png"></a>
+                                                </span>
+                                            </div><!-- /.col -->
                                         </div>
-                                    </div>
-                                    <div class="col-sm-8" style="text-align:center">
-                                        <span>
-                                            <a href="https://web.facebook.com/nnpclimited/" target="_blank" rel="noopener">
-                                            <img border="0" width="15" alt="facebook icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/facebook.png"></a>
-                                        </span>
-                                        <span>
-                                            <a href="https://twitter.com/nnpclimited" target="_blank" rel="noopener">
-											<img border="0" width="15" alt="twitter icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/twitter.png"></a>
-                                        </span>
-                                        <span>
-                                            <a href="https://www.instagram.com/nnpclimited/" target="_blank" rel="noopener">
-                                            <img border="0" width="15" alt="instagram icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/instagram.png"></a>
-                                        </span>
                                     </div>
                                 </div>
                                 <hr>

@@ -77,16 +77,10 @@ class idcardController extends Controller {
 		->email($staff_data->email, [Email::WORK, Email::INTERNET])
 		->tel($staff_data->mobile, [Tel::HOME, Tel::VOICE])
 		->tel($staff_data->ext, [Tel::WORK, Tel::VOICE])
-		//->tel('+0123456789', [Tel::CELL, Tel::VOICE])
-		//->url('https://johnsmith.com')
-		->url('https:nnpcgroup.com')
-		//->bday(Carbon::parse('1990-06-24'))
-		//->photo('data:image/jpeg;base64,'.base64_encode(file_get_contents(__DIR__.'/stubs/photo.jpg')))
+		->url('https://nnpcgroup.com')
 		->title($staff_data->designation)
-		//->role('Excecutive')
-		->org('NNPC Limited')
-		//->member('john.smith@company.com', '550e8400-e29b-11d4-a716-446655440000')
-;		
+		->org('NNPC Limited');
+		
 		return $vcard;
         // define vcard
         //$vcard = new VCard();
