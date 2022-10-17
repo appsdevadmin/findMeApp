@@ -84,10 +84,10 @@ class idcardController extends Controller {
        // $vcard->addPhoto(__DIR__ . '/landscape.jpeg');
 
         // return vcard as a string
-        //return $vcard->getOutput();
+        return $vcard->getOutput();
 
         // return vcard as a download
-        return $vcard->download();
+        //return $vcard->download();
 
         // save vcard on disk
         //$vcard->setSavePath('/path/to/directory');
