@@ -68,7 +68,7 @@ class idcardController extends Controller {
     public function generateVcard($staff_id){
         $staff_data = staff_data::where('staff_id',$staff_id)->get()->first();
 
-		Vcard::make()
+		$vcard = Vcard::make()
 		->kind(Kind::INDIVIDUAL)
 		//->gender(Gender::MALE)
 		->fullName($staff_data->last_name, $staff_data->first_name)
@@ -84,12 +84,10 @@ class idcardController extends Controller {
 		//->photo('data:image/jpeg;base64,'.base64_encode(file_get_contents(__DIR__.'/stubs/photo.jpg')))
 		->title($staff_data->designation)
 		//->role('Excecutive')
-		->org('NNPC Limited');
-		//->member('john.smith@company.com', '550e8400-e29b-11d4-a716-446655440000');
-
-
-
-
+		->org('NNPC Limited')
+		//->member('john.smith@company.com', '550e8400-e29b-11d4-a716-446655440000')
+;		
+		return $vcard;
         // define vcard
         //$vcard = new VCard();
 
