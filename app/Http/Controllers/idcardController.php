@@ -10,8 +10,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\HttpResponse;
 
+use Astrotomic\Vcard\Properties\Email;
+use Astrotomic\Vcard\Properties\Gender;
+use Astrotomic\Vcard\Properties\Kind;
+use Astrotomic\Vcard\Properties\Tel;
+use Astrotomic\Vcard\Vcard;
+
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
-use JeroenDesloovere\VCard\VCard;
+//use JeroenDesloovere\VCard\VCard;
 
 use App\users;
 use App\staff_data;
@@ -61,30 +67,53 @@ class idcardController extends Controller {
 
     public function generateVcard($staff_id){
         $staff_data = staff_data::where('staff_id',$staff_id)->get()->first();
+
+		Vcard::make()
+		->kind(Kind::INDIVIDUAL)
+		//->gender(Gender::MALE)
+		->fullName($staff_data->last_name, $staff_data->first_name)
+		->name($staff_data->last_name, $staff_data->first_name)
+		->email($staff_data->email)
+		->email($staff_data->email, [Email::WORK, Email::INTERNET])
+		->tel($staff_data->mobile, [Tel::HOME, Tel::VOICE])
+		->tel($staff_data->ext, [Tel::WORK, Tel::VOICE])
+		//->tel('+0123456789', [Tel::CELL, Tel::VOICE])
+		//->url('https://johnsmith.com')
+		->url('https:nnpcgroup.com')
+		//->bday(Carbon::parse('1990-06-24'))
+		//->photo('data:image/jpeg;base64,'.base64_encode(file_get_contents(__DIR__.'/stubs/photo.jpg')))
+		->title($staff_data->designation)
+		//->role('Excecutive')
+		->org('NNPC Limited');
+		//->member('john.smith@company.com', '550e8400-e29b-11d4-a716-446655440000');
+
+
+
+
         // define vcard
-        $vcard = new VCard();
+        //$vcard = new VCard();
 
         // define variables
 
 
         // add personal data
-        $vcard->addName($staff_data->last_name, $staff_data->first_name,);
+        //$vcard->addName($staff_data->last_name, $staff_data->first_name,);
 
         // add work data
-        $vcard->addCompany('NNPC Limited');
-        $vcard->addJobtitle($staff_data->designation);
+        // $vcard->addCompany('NNPC Limited');
+        // $vcard->addJobtitle($staff_data->designation);
         // $vcard->addRole('Data Protection Officer');
-        $vcard->addEmail($staff_data->email);
-        $vcard->addPhoneNumber($staff_data->mobile, 'PREF;WORK');
-        $vcard->addPhoneNumber($staff_data->ext, 'WORK');
-        $vcard->addAddress($staff_data->sbu,$staff_data->loc_description );
-        $vcard->addLabel('Herber Macaulay Way, CBD, Abuja Nigeria');
-        $vcard->addURL('https://www.nnpcgroup.com');
+        // $vcard->addEmail($staff_data->email);
+        // $vcard->addPhoneNumber($staff_data->mobile, 'PREF;WORK');
+        // $vcard->addPhoneNumber($staff_data->ext, 'WORK');
+        // $vcard->addAddress($staff_data->sbu,$staff_data->loc_description );
+        // $vcard->addLabel('Herber Macaulay Way, CBD, Abuja Nigeria');
+        // $vcard->addURL('https://www.nnpcgroup.com');
 
        // $vcard->addPhoto(__DIR__ . '/landscape.jpeg');
 
         // return vcard as a string
-        return $vcard->getOutput();
+        //return $vcard->getOutput();
 
         // return vcard as a download
         //return $vcard->download();
