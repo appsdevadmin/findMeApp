@@ -140,9 +140,9 @@
                                 <a href="/" class="btn btn-sm btn-success">
                                     <i class="fas fa-user"></i> View Profile
                                 </a>
-                                <!-- <a href="/generateVcard/{{$staff_data->staff_id}}" class="btn btn-sm btn-primary">
+                                <a href="/generateVcard/{{$staff_data->staff_id}}" class="btn btn-sm btn-primary">
                                     <i class="fas fa-user-plus"></i> Download Vcard
-                                </a> -->
+                                </a>
                             </div>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
