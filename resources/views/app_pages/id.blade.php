@@ -15,7 +15,7 @@
         <!-- /.content-header -->
         <!-- Main content -->
         <div class="content">
-            @if($staff_data != "")
+            @if($staff_data != "" && $staff_data != "Not Valid")
                 <div class="container-fluid">
                     <!-- Main row -->
                     <div class="row">
@@ -34,7 +34,7 @@
                                 <hr>
                                 <div class="row invoice-info">
                                     <div class="col-sm-4 invoice-col" style = "text-align:center">
-                                        <img src="{{asset('/Passport_Photos/'.'S. '.$staff_data->staff_id.'.jpg')}}" style="border-radius:50%" alt="Staff Photo" width="200" height="200">
+                                        <img src="{{asset('/Passport_Photos/'.'S. '.($staff_data->staff_id).'.jpg')}}" style="border-radius:50%" alt="Staff Photo" width="200" height="200">
                                         <br>
                                         <br>
                                         <strong> {{$staff_data->first_name }} {{$staff_data->last_name }}
@@ -154,13 +154,14 @@
                         <div class="visible-print text-center">
                             <hr/>
                             @if($staff_data == "")
-                                <p><h4>This Card in no longer valid!</h4></p>
-                            @else
+                                <p><h4>This card in no longer valid!</h4></p>
+                                <p><strong>The card is reported missing or stolen</strong></p>
+                                <hr/>
+                                    Kindly return to the nearest NNPC location or call <a href="tel:+234946081000">+234946081000</a> or send an email to 
+                                    <a href ="mailto:info@nnpcgroup.com">info@nnpcgroup.com</a>
+                            @elseif($staff_data == "Not Valid")
                                 <p><h4>The Scanned QR code is not valid!</h4></p>
                             @endif
-                            <hr/>
-                            <h4 class="animate__animated animate__headShake"><a href="https://www.nnpcgroup.com"><img src="{{asset('/img/NNPC_S2.png') }}" alt="" height="178" width="210" class="img-fluid"></a></h4>
-                            <p>NNPC Limited</p>
                             <hr/>
                         </div>
                     </div>

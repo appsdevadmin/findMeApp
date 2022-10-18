@@ -135,6 +135,9 @@
                                             <a href="https://www.instagram.com/nnpclimited/" target="_blank" rel="noopener">
                                             <img border="0" width="15" alt="instagram icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/instagram.png"></a>
                                         </span>
+                                        <input type="button" id="qrbtn" value="Embed VCARD in QRCode Format"/><br>
+                                        <img id='qrImage' style='display:inline;'
+                                            src='https://chart.googleapis.com/chart?cht=qr&choe=UTF-8&chs=200x200&chl=http%3A%2F%2Fofficetricks.com'/>
                                     </div>
                                 </div>
                                 <!-- /.row -->
@@ -150,12 +153,13 @@
                             <hr/>
                             @if($staff_data == "")
                                 <p><h4>This Card in no longer valid!</h4></p>
-                            @else
+                                <p>The card is reported missing or stolen</p>
+                                <hr/>
+                                    Kindly return to the nearest NNPC location or call <a href="tel:+234946081000">+234946081000</a> or send an email to 
+                                    <a href ="mailto:info@nnpcgroup.com">info@nnpcgroup.com</a>
+                            @elseif($staff_data == "Not Valid")
                                 <p><h4>The Scanned QR code is not valid!</h4></p>
                             @endif
-                            <hr/>
-                            <h4 class="animate__animated animate__headShake"><a href="https://www.nnpcgroup.com"><img src="{{asset('/img/NNPC_S2.png') }}" alt="" height="178" width="210" class="img-fluid"></a></h4>
-                            <p>NNPC Limited</p>
                             <hr/>
                         </div>
                     </div>

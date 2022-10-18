@@ -51,7 +51,7 @@ class idcardController extends Controller {
 
             Session::flash('message_error', 'Invalid Code!');
             //abort(404);
-            $staff_data = "";
+            $staff_data = "Not Valid";
            return view('app_pages.id', compact('staff_data'));
 
 
