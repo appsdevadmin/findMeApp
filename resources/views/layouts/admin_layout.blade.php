@@ -1,49 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
-var btn = document.getElementById("qrbtn");
-btn.addEventListener("click", function() {
-  console.log("Abs");
-    generateQRCode();
-}, false);
-            var lastname = {{$staff_data->last_name }};
-            var firstName = {{$staff_data->first_name }};
-            var email= '{!! $staff_data->email !!}';
-            var phoneNo = {{$staff_data->mobile }};
-            var title = {{$staff_data->designation }};
-            var org = "NNPC Limited";
-            var address1 = {{$staff_data->loc_description }};
-            var url = "https://nnpcgroup.com";
-
-
-            function generateQRCode(){
-            var startNode="BEGIN:VCARD"+"\n"+"VERSION:3.0"+"\n";
-            var endNode="END:VCARD";
-            startNode+="N:"+lastName+";"+firstName+"\n";
-            startNode+="FN:"+firstName+" "+lastName+"\n";
-            startNode+="EMAIL:"+email+"\n";
-            startNode+="ORG:"+org+"\n";
-            startNode+="TITLE:"+title+"\n";
-            startNode+="URL:"+url+"\n";
-            startNode+="TEL:"+phoneNo+"\n";
-            startNode+="ADR:"+address1+"\n";
-            startNode+=endNode;
-            this.qrImage.style.display ='none';
-            this.qrImage.src="https://chart.googleapis.com/chart?cht=qr&choe=UTF-8&chs=200x200&chl="
-            +encodeURIComponent(startNode);
-            this.qrImage.style.display ='inline';
-            this.vcard.value=startNode;
-            this.vcard.style.display ='inline';
-            this.vcardDiv.style.display ='inline';
-            this.sampleQR.style.display ='none';
-            }
-
-</script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>NNPC Limited</title>
@@ -53,7 +10,7 @@ btn.addEventListener("click", function() {
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('admin_assets/plugins/fontawesome-free/css/all.min.css') }}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
+  <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}"> -->
   <!-- Tempusdominus Bbootstrap 4 -->
   <link rel="stylesheet" href="{{ asset('admin_assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
   <!-- iCheck -->
@@ -73,7 +30,6 @@ btn.addEventListener("click", function() {
    <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('admin_assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin_assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-  <script type="text/javascript" src="lib.js"></script>
   
  <style>
         * {
@@ -179,7 +135,7 @@ btn.addEventListener("click", function() {
     </style>
 
 </head>
-<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed" onload="myFunction();">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
 <div class="wrapper">
 
   <!-- Navbar -->
