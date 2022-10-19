@@ -107,13 +107,10 @@
                                         @endif
                                     </div>
                                     <div class="col-sm-2 invoice-col" style = "text-align:center">
-                                        <img id='qrImage' style='display:inline;'
-                                            src='https://chart.googleapis.com/chart?cht=qr&choe=UTF-8&chs=200x200&chl=http%3A%2F%2Fofficetricks.com'/>
-                                    
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-4">
+                                    <!-- <div class="col-sm-4">
                                         <div class="row">
                                             <div class="col-sm-2" style="margin-left: 20%">
                                                     <a href="tel:{{$staff_data->mobile ??''}}" class="btn">
@@ -124,10 +121,10 @@
                                                     <a href = "mailto:{{$staff_data->email ?? ''}}" class="btn">
                                                         <img width="13" alt="email" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> Email
                                                     </a>
-                                            </div><!-- /.col -->
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-8" style="text-align:center">
+                                    </div> -->
+                                    <div class="col-sm-5" style="text-align:right">
                                         <span>
                                             <a href="https://web.facebook.com/nnpclimited/" target="_blank" rel="noopener">
                                             <img border="0" width="15" alt="facebook icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/facebook.png"></a>
@@ -140,10 +137,16 @@
                                             <a href="https://www.instagram.com/nnpclimited/" target="_blank" rel="noopener">
                                             <img border="0" width="15" alt="instagram icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/instagram.png"></a>
                                         </span>
-                                        </div>
+                                    </div>
                                 </div>
                                 <!-- /.row -->
                                 <hr>
+                                <div class="row">
+                                    <div class="col-12" style="text-align: center">
+                                    <strong>Share Contact</strong></br>
+                                    <img id='qrImage' style='display:inline;'/>
+                                    </div>
+                                </div>
                             </div>
                         </div><!-- /.col -->
                     </div>
@@ -170,8 +173,6 @@
         </section>
     </div><!-- /.row (main row) -->
             <script type="text/javascript">
-               
-                console.log('entered');
                 var lastName = '{{$staff_data->last_name }}';
                 var firstName = '{{$staff_data->first_name }}';
                 var email= '{!! $staff_data->email !!}';
