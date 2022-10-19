@@ -101,15 +101,15 @@
                                         <div class="row">
                                             <div class="col-sm-2 py-2" style="text-align:center" >
                                                 <div >
-                                                    <a href="tel:{{$staff_data->mobile}}" class="btn btn-success">
-                                                        <img alt="phone" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> Call Me
+                                                    <a href="tel:{{$staff_data->mobile}}" class="btn">
+                                                        <img alt="phone" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> Call
                                                     </a>
                                                 </div>
                                             </div>
                                             <div class="col-sm-2 py-2" style="text-align:center">    
                                                 <div>
-                                                    <a href ="mailto:{{$staff_data->email}}" class="btn btn-primary">
-                                                        <img alt="phone" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> Email Me
+                                                    <a href ="mailto:{{$staff_data->email}}" class="btn">
+                                                        <img alt="phone" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> Email
                                                     </a>
                                                 </div>
                                             </div><!-- /.col -->
@@ -140,9 +140,9 @@
                                 <a href="/" class="btn btn-sm btn-success">
                                     <i class="fas fa-user"></i> View Profile
                                 </a>
-                                <a href="/generateVcard/{{$staff_data->staff_id}}" class="btn btn-sm btn-primary">
+                                <!-- <a href="/generateVcard/{{$staff_data->staff_id}}" class="btn btn-sm btn-primary">
                                     <i class="fas fa-user-plus"></i> Download Vcard
-                                </a>
+                                </a> -->
                             </div>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
