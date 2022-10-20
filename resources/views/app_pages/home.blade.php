@@ -4,7 +4,9 @@
 {{--    Staff info View--}}
     @include ('app_pages/_card')
 {{--    Menu Options--}}
-    @include('app_pages/_cardMenu')
+    @if ($id == "")
+      @include('app_pages/_cardMenu')
+    @endif
 	<div class="modal fade" id="modal-lg">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">

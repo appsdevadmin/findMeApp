@@ -40,52 +40,52 @@
                                         <br>
                                     </div>
                                     <!-- /.col -->
-                                    <div class="col-sm-6 invoice-col">
+                                    <div class="col-sm-8 invoice-col">
                                         @if($staff_data->blood_group != "-")
                                         <div class ="row">
-                                            <div class="col-sm-6" style="text-align:start">
+                                            <div class="col-sm-8" style="text-align:start">
                                                 <img  alt="blood_group" style="border:0; height:13px; width:13px; " src="{{url('img/blood drop.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->blood_group  ?? "-"}}&nbsp;&nbsp;
                                             </div>
                                         </div>
                                         @endif
                                         @if($staff_data->blood_group != "-")
                                         <div class ="row">
-                                            <div class="col-sm-6" style="text-align:start">
+                                            <div class="col-sm-8" style="text-align:start">
                                                 <img  alt="height" style="border:0; height:13px; width:13px; " src="{{url('img/height.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->height . 'm' ?? "-"}}
                                             </div>
                                         </div>
                                         @endif
                                         @if($staff_data->ext != "")
                                         <div class ="row">
-                                            <div class="col-sm-6" style="text-align:start">
+                                            <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="{{url('img/telephone.png')}}"> &nbsp &nbsp &nbsp  {{$staff_data->ext}}
                                             </div>
                                         </div>
                                         @endif
                                         @if($staff_data->mobile != "")
                                         <div class ="row">
-                                            <div class="col-sm-6" style="text-align:start">
+                                            <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> &nbsp &nbsp &nbsp  {{$staff_data->mobile}}
                                             </div>
                                         </div>
                                         @endif
                                         @if($staff_data->email != "")
                                         <div class ="row">
-                                            <div class="col-sm-6" style="text-align:start">
+                                            <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="email" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> &nbsp &nbsp &nbsp  {{$staff_data->email }}
                                             </div>
                                         </div>
                                         @endif
                                         @if($staff_data->department_name != "")
                                         <div class ="row">
-                                            <div class="col-sm-6" style="text-align:start; word-wrap:break-word;">
+                                            <div class="col-sm-8" style="text-align:start; word-wrap:break-word;">
                                                 <img width="13" alt="department" style="border:0; height:13px; width:13px; " src="{{url('img/structure.png')}}"> &nbsp &nbsp &nbsp  {{$staff_data->department_name }}
                                             </div>
                                         </div>
                                         @endif
                                         @if($staff_data->sbu != "")
                                         <div class ="row">
-                                            <div class="col-sm-6" style="text-align:start">
+                                            <div class="col-sm-8" style="text-align:start">
                                                 <img width="13" alt="sbu" style="border:0; height:13px; width:13px; " src="{{url('img/office-building.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->sbu }}
                                             </div>
                                         </div>
@@ -93,20 +93,18 @@
                                         @if($staff_data->sbu != "" or $staff_data->loc_description != "")
                                             @if($staff_data->sbu == "NNPC Limited")
                                                 <div class ="row">
-                                                    <div class="col-sm-6" style="text-align:start">
+                                                    <div class="col-sm-8" style="text-align:start">
                                                         <img width="13" alt="address" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  CHQ, {{$staff_data->loc_description ?? ''}}
                                                     </div>
                                                 </div>
                                             @else
                                                 <div class ="row">
-                                                    <div class="col-sm-6" style="text-align:start">
+                                                    <div class="col-sm-8" style="text-align:start">
                                                         <img width="13" alt="address" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu ?? ''}}, {{$staff_data->loc_description ?? ''}}
                                                     </div>
                                                 </div>
                                             @endif
                                         @endif
-                                    </div>
-                                    <div class="col-sm-2 invoice-col" style = "text-align:center">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -143,7 +141,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-12" style="text-align: center">
-                                    <strong>Share Contact</strong></br>
+                                    <strong>Digital Business Card</strong><br>
                                     <img id='qrImage' style='display:inline;'/>
                                     </div>
                                 </div>
