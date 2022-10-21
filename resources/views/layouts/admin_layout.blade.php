@@ -179,7 +179,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #1A2F3E">
     <!-- Brand Logo -->
     <a href="/home/menu" class="brand-link" style="background-color: #1A2F3E">
-      <span class="brand-text font-weight-light"><img src="{{asset('img/NNPC_S2.png') }}" alt="" class="img-fluid" width="100" height="80"><h4></h4></span>
+      <span class="brand-text font-weight-light"><img src="{{asset('img/nnpc_limited.png') }}" alt="" class="img-fluid" width="100" height="80"><h4></h4></span>
     </a>
 	<br/>
     <!-- Sidebar -->
@@ -193,7 +193,7 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 		    @if(Session::get('role_id') == 1)
@@ -347,7 +347,7 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('admin_assets/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('admin_assets/dist/js/demo.js') }}"></script>
+<!-- <script src="{{ asset('admin_assets/dist/js/demo.js') }}"></script> -->
 
 <!-- DataTables -->
 <script src="{{ asset('admin_assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
@@ -355,11 +355,19 @@
 <script src="{{ asset('admin_assets//plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('admin_assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('admin_assets/dist/js/adminlte.min.js') }}"></script>
+<!-- <script src="{{ asset('admin_assets/dist/js/adminlte.min.js') }}"></script> -->
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('admin_assets/dist/js/demo.js') }}"></script>
+
 <!-- page script -->
 <script>
+
+  // $(document).ready(function () {
+  //     $('.nav-item').click(function () {
+  //       $('.sidebar-mini').removeClass('sidebar-open');
+  //       $('.sidebar-mini').addClass('sidebar-closed sidebar-collapse');
+  //     });
+  //   });
+
   $(function () {
     $("#example1").DataTable({
       "responsive": true,
