@@ -36,8 +36,8 @@
 			<select name="role" class="chosen-select form-control" id="role" required="required" data-placeholder="Choose Role...">
 				<option value="">Role?</option>
 				<option value="1">System Admin</option>
-				<option value="4">User</option>
-				
+				<option value="2">User</option>
+				<option value="3">GSD Admin</option>
 			</select>
 			</div>
 			<label>
