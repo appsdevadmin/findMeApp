@@ -2,7 +2,6 @@
 @section('content')
     <!-- Main content -->
     @include ('app_pages/_card')
-    @include('app_pages/_cardMenu')
     <div class="modal fade" id="modal-lg">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
