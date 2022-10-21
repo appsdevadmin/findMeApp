@@ -145,6 +145,12 @@
                                     <img id='qrImage' style='display:inline;'/>
                                     </div>
                                 </div>
+                                <hr/>
+                                <div class="row">
+                                    <div class="col-12" style="text-align: left">
+                                        @include('app_pages/_cardMenu')
+                                    </div>
+                                </div>
                             </div>
                         </div><!-- /.col -->
                     </div>

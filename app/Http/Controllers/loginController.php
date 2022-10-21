@@ -97,10 +97,10 @@ class loginController extends Controller
 
         $username = Session::get('username');
 
-        $user = users::where('id_no', '=', $username)
+        $user = users::where('id_no', '=', $username)->where('role','!=','2')
             ->first();
 		if($user != ""){
-			Session::put('role', $user->role);
+            Session::put('role', $user->role);
 			Session::put('role_id', $user->role);
 		}else{
 			Session::put('role', "2");
