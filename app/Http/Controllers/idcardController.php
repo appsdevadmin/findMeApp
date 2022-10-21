@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\HttpResponse;
+//use Illuminate\Support\Facades\Mail;
 
 use Astrotomic\Vcard\Properties\Email;
 use Astrotomic\Vcard\Properties\Gender;
@@ -128,6 +129,39 @@ class idcardController extends Controller {
 
 			staff_data::where('staff_id', $staff_id)->update(['status' => 'Deactivated']);
 
+			//Send Email Notification to reporter
+			$staff_profile = (object)$this->basicStaffDetails->init($staff_id);
+
+			$surname = $staff_profile->surname;
+			$firstname = $staff_profile->firstname;
+			$reporter_email = $staff_profile->emailaddress;
+
+			$data = array( 'reporter_email' => $reporter_email);
+			Mail::send('emails.reportCardMissing',compact('firstname','surname'), function ($message)  use ($data) {
+
+			$message->from('do-not-reply@nnpcgroup.com', 'Report Card Missing/Stolen');
+
+			$message->to($data['reporter_email'])->subject('ID Card Reported Missing/Stolen');
+
+			});
+
+			//Send Email Notification to GSD Admins
+			$gsd_admins = users::select('email')->where('role',3)->get();
+			if($gsd_admins){
+				foreach($gsd_admins as $gsdAdmin)
+				{
+					$data = array( 'reporter_email' => $gsdAdmin->email);
+					Mail::send('emails.CardReportedMissing',compact('firstname','surname','staff_id'), function ($message)  use ($data) {
+
+					$message->from('do-not-reply@nnpcgroup.com', 'Staff ID Card Reported Missing/Stolen');
+
+					$message->to($data['reporter_email'])->subject('Staff ID Card Reported Missing/Stolen');
+
+					});
+				}
+			}
+			//dd('sent');
+
 
 			Session::flash('message', 'Card Status Updated Successfully');
 			return redirect('home/menu');
@@ -150,12 +184,44 @@ class idcardController extends Controller {
 				$input['description'] = 'Deactivated by Admin';
 				$input['staff_id'] = $id;
 				$input['updated_by'] = Session::get('firstname')." ".Session::get('surname')." (".$username.")";
+				$deactivated_by = $input['updated_by'];
 
 				card_status::create($input);
 
 				staff_data::where('staff_id', $id)->update(['status' => 'Deactivated']);
 
+				//Send Email Notification to staff
+				$staff_profile = (object)$this->basicStaffDetails->init($id);
 
+				$surname = $staff_profile->surname;
+				$firstname = $staff_profile->firstname;
+				$deactivated_email = $staff_profile->emailaddress;
+
+				$data = array( 'deactivated_email' => $deactivated_email);
+				Mail::send('emails.CardDeactivated',compact('firstname','surname'), function ($message)  use ($data) {
+
+				$message->from('do-not-reply@nnpcgroup.com', 'Staff ID Card Deactivated');
+
+				$message->to($data['deactivated_email'])->subject('Staff ID Card Deactivated');
+
+				});
+
+				//Send Email Notification to GSD Admins
+				$gsd_admins = users::select('email')->where('role',3)->get();
+				if($gsd_admins){
+					foreach($gsd_admins as $gsdAdmin)
+					{
+						$data = array( 'gsdAdmin_email' => $gsdAdmin->email);
+						Mail::send('emails.AdminCardDeactivated',compact('firstname','surname','id','deactivated_by'), function ($message)  use ($data) {
+
+						$message->from('do-not-reply@nnpcgroup.com', 'Staff ID Card Deactivated');
+
+						$message->to($data['gsdAdmin_email'])->subject('Staff ID Card Deactivated');
+
+						});
+					}
+				}
+				
 				Session::flash('message', 'Card Status Updated Successfully');
 				return redirect('home/menu');
 
@@ -181,11 +247,43 @@ class idcardController extends Controller {
 				$input['description'] = 'Activated by Admin';
 				$input['staff_id'] = $id;
 				$input['updated_by'] = Session::get('firstname')." ".Session::get('surname')." (".$username.")";
+				$activated_by = $input['updated_by'];
 
 				card_status::create($input);
 
 				staff_data::where('staff_id', $id)->update(['status' => 'Activated']);
 
+				//Send Email Notification to staff
+				$staff_profile = (object)$this->basicStaffDetails->init($id);
+
+				$surname = $staff_profile->surname;
+				$firstname = $staff_profile->firstname;
+				$activated_email = $staff_profile->emailaddress;
+
+				$data = array( 'activated_email' => $activated_email);
+				Mail::send('emails.CardActivated',compact('firstname','surname'), function ($message)  use ($data) {
+
+				$message->from('do-not-reply@nnpcgroup.com', 'Staff ID Card Activated');
+
+				$message->to($data['activated_email'])->subject('Staff ID Card Activated');
+
+				});
+
+				//Send Email Notification to GSD Admins
+				$gsd_admins = users::select('email')->where('role',3)->get();
+				if($gsd_admins){
+					foreach($gsd_admins as $gsdAdmin)
+					{
+						$data = array( 'gsdAdmin_email' => $gsdAdmin->email);
+						Mail::send('emails.AdminCardActivated',compact('firstname','surname','id','activated_by'), function ($message)  use ($data) {
+
+						$message->from('do-not-reply@nnpcgroup.com', 'Staff ID Card Deactivated');
+
+						$message->to($data['gsdAdmin_email'])->subject('Staff ID Card Deactivated');
+
+						});
+					}
+				}
 
 				Session::flash('message', 'Card Status Updated Successfully');
 				return redirect('home/menu');
@@ -527,8 +625,5 @@ class idcardController extends Controller {
 			  return redirect('/logout');
 		}
 	}
-
-
-
 
 }
