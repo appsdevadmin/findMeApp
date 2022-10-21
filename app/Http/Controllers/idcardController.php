@@ -92,16 +92,17 @@ class idcardController extends Controller {
 		if (Session::has('username'))
 		{
 			$id = Session::get('idx');
+			$rolex = Session::get('role');
 			//dd($idx);
-			if($id != ""){
+			if(($id != "") && ($rolex != 2)){
 				$staff_data = staff_data::where('unique_id',$id)->first();
 				Session::forget('idx');
-				return view('app_pages.home', compact('id','staff_data'));
+				return view('app_pages.home', compact('id','staff_data','rolex'));
 				
 			}
 			else{
 				$staff_data = staff_data::where('staff_id',$username)->first();
-				return view('app_pages.home', compact('id','staff_data'));
+				return view('app_pages.home', compact('id','staff_data','rolex'));
 			}
 		}
 		else {

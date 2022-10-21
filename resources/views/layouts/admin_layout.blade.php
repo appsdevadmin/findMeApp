@@ -156,7 +156,7 @@
         </ul>
       </li>
 	  @endif
-	  @if((Session::get('role_id') == 1)  || (Session::get('role_id') == 2))
+	  @if((Session::get('role_id') == 1)  || (Session::get('role_id') == 3))
       <li class="nav-item dropdown">
       <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">⌨️ Staff</a>
         <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
@@ -215,7 +215,7 @@
             </ul>
           </li>
 		    @endif
-		  @if((Session::get('role_id') == 1)  || (Session::get('role_id') == 2))
+		  @if((Session::get('role_id') == 1)  || (Session::get('role_id') == 3))
 		  <li class="nav-item has-treeview menu-close">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chalkboard"></i>
