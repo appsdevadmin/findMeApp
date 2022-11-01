@@ -53,14 +53,14 @@
                                         @if($staff_data->mobile != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
-                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> &nbsp &nbsp &nbsp <a href="tel:{{$staff_data->mobile}}"> {{$staff_data->mobile}} </a>
+                                                <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://nnpccmsstorage.blob.core.windows.net/images/phone.png"> &nbsp &nbsp &nbsp <a href="tel:{{$staff_data->mobile}}"> {{$staff_data->mobile}} </a>
                                             </div>
                                         </div>
                                         @endif
                                         @if($staff_data->email != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
-                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> &nbsp &nbsp &nbsp  <a href="mailto:{{$staff_data->email}}">{{$staff_data->email }}</a>
+                                            </i><img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://nnpccmsstorage.blob.core.windows.net/images/email.png"> &nbsp &nbsp &nbsp  <a href="mailto:{{$staff_data->email}}">{{$staff_data->email }}</a>
                                             </div>
                                         </div>
                                         @endif
@@ -82,13 +82,13 @@
                                             @if($staff_data->sbu == "NNPC Limited")
                                             <div class ="row">
                                                 <div class="col-sm-8" style="text-align:start">
-                                                    <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  CHQ, {{$staff_data->loc_description }}
+                                                    <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://nnpccmsstorage.blob.core.windows.net/images/address.png"> &nbsp &nbsp &nbsp  CHQ, {{$staff_data->loc_description }}
                                                 </div>
                                             </div>
                                             @else
                                             <div class ="row">
                                                 <div class="col-sm-8" style="text-align:start">
-                                                    <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu }}, {{$staff_data->loc_description }}
+                                                    <img border="0" width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://nnpccmsstorage.blob.core.windows.net/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu }}, {{$staff_data->loc_description }}
                                                 </div>
                                             </div>
                                             @endif
@@ -100,31 +100,35 @@
                                     <div class="col-xs-6 py-3">
                                         <div class="row">
                                             <div class="col-sm-2 py-2" style="text-align:center" >
+                                            @if($staff_data->mobile != "")
                                                 <div >
                                                     <a href="tel:{{$staff_data->mobile}}" class="btn">
-                                                        <img alt="phone" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> Call
+                                                        <img alt="phone" style="border:0; height:20px; width:20px; " src="https://nnpccmsstorage.blob.core.windows.net/images/phone.png"> Call
                                                     </a>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-2 py-2" style="text-align:center">    
+                                            @endif
+                                            </div>  
+                                            <div class="col-sm-2 py-2" style="text-align:center"> 
+                                            @if($staff_data->email != "")  
                                                 <div>
                                                     <a href ="mailto:{{$staff_data->email}}" class="btn">
-                                                        <img alt="phone" style="border:0; height:20px; width:20px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> Email
+                                                        <img alt="phone" style="border:0; height:20px; width:20px; " src="https://nnpccmsstorage.blob.core.windows.net/images/email.png"> Email
                                                     </a>
-                                                </div>
+                                                </div>  
+                                            @endif
                                             </div><!-- /.col -->
                                             <div class="col-sm-2 py-3">
                                                 <span>
                                                     <a href="https://web.facebook.com/nnpclimited/" target="_blank" rel="noopener">
-                                                    <img border="0" width="15" alt="facebook icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/facebook.png"></a>
+                                                    <img border="0" width="15" alt="facebook icon" style="border:0; height:15px; width:15px; " src="https://nnpccmsstorage.blob.core.windows.net/images/facebook.png"></a>
                                                 </span>
                                                 <span>
                                                     <a href="https://twitter.com/nnpclimited" target="_blank" rel="noopener">
-                                                    <img border="0" width="15" alt="twitter icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/twitter.png"></a>
+                                                    <img border="0" width="15" alt="twitter icon" style="border:0; height:15px; width:15px; " src="https://nnpccmsstorage.blob.core.windows.net/images/twitter.png"></a>
                                                 </span>
                                                 <span>
                                                     <a href="https://www.instagram.com/nnpclimited/" target="_blank" rel="noopener">
-                                                    <img border="0" width="15" alt="instagram icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/instagram.png"></a>
+                                                    <img border="0" width="15" alt="instagram icon" style="border:0; height:15px; width:15px; " src="https://nnpccmsstorage.blob.core.windows.net/images/instagram.png"></a>
                                                 </span>
                                             </div><!-- /.col -->
                                         </div>

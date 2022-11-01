@@ -65,14 +65,14 @@
                                         @if($staff_data->mobile != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
-                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/phone.png"> &nbsp &nbsp &nbsp  {{$staff_data->mobile}}
+                                                <img width="13" alt="phone" style="border:0; height:13px; width:13px; " src="https://nnpccmsstorage.blob.core.windows.net/images/phone.png"> &nbsp &nbsp &nbsp  {{$staff_data->mobile}}
                                             </div>
                                         </div>
                                         @endif
                                         @if($staff_data->email != "")
                                         <div class ="row">
                                             <div class="col-sm-8" style="text-align:start">
-                                                <img width="13" alt="email" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/email.png"> &nbsp &nbsp &nbsp  {{$staff_data->email }}
+                                                <img width="13" alt="email" style="border:0; height:13px; width:13px; " src="https://nnpccmsstorage.blob.core.windows.net/images/email.png"> &nbsp &nbsp &nbsp  {{$staff_data->email }}
                                             </div>
                                         </div>
                                         @endif
@@ -94,13 +94,13 @@
                                             @if($staff_data->sbu == "NNPC Limited")
                                                 <div class ="row">
                                                     <div class="col-sm-8" style="text-align:start">
-                                                        <img width="13" alt="address" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  CHQ, {{$staff_data->loc_description ?? ''}}
+                                                        <img width="13" alt="address" style="border:0; height:13px; width:13px; " src="https://nnpccmsstorage.blob.core.windows.net/images/address.png"> &nbsp &nbsp &nbsp  CHQ, {{$staff_data->loc_description ?? ''}}
                                                     </div>
                                                 </div>
                                             @else
                                                 <div class ="row">
                                                     <div class="col-sm-8" style="text-align:start">
-                                                        <img width="13" alt="address" style="border:0; height:13px; width:13px; " src="https://www.nnpcgroup.com/emailsignature/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu ?? ''}}, {{$staff_data->loc_description ?? ''}}
+                                                        <img width="13" alt="address" style="border:0; height:13px; width:13px; " src="https://nnpccmsstorage.blob.core.windows.net/images/address.png"> &nbsp &nbsp &nbsp  {{$staff_data->sbu ?? ''}}, {{$staff_data->loc_description ?? ''}}
                                                     </div>
                                                 </div>
                                             @endif
@@ -125,15 +125,15 @@
                                     <div class="col-sm-5" style="text-align:right">
                                         <span>
                                             <a href="https://web.facebook.com/nnpclimited/" target="_blank" rel="noopener">
-                                            <img border="0" width="15" alt="facebook icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/facebook.png"></a>
+                                            <img border="0" width="15" alt="facebook icon" style="border:0; height:15px; width:15px; " src="https://nnpccmsstorage.blob.core.windows.net/images/facebook.png"></a>
                                         </span>
                                         <span>
                                             <a href="https://twitter.com/nnpclimited" target="_blank" rel="noopener">
-											<img border="0" width="15" alt="twitter icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/twitter.png"></a>
+											<img border="0" width="15" alt="twitter icon" style="border:0; height:15px; width:15px; " src="https://nnpccmsstorage.blob.core.windows.net/images/twitter.png"></a>
                                         </span>
                                         <span>
                                             <a href="https://www.instagram.com/nnpclimited/" target="_blank" rel="noopener">
-                                            <img border="0" width="15" alt="instagram icon" style="border:0; height:15px; width:15px; " src="https://www.nnpcgroup.com/emailsignature/images/instagram.png"></a>
+                                            <img border="0" width="15" alt="instagram icon" style="border:0; height:15px; width:15px; " src="https://nnpccmsstorage.blob.core.windows.net/images/instagram.png"></a>
                                         </span>
                                     </div>
                                 </div>
