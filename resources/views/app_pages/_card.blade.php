@@ -30,7 +30,18 @@
                                 <hr>
                                 <div class="row invoice-info">
                                     <div class="col-sm-4 invoice-col" style = "text-align:center">
-                                    <img src="{{asset('/Passport_Photos/'.'S. '.$staff_data->staff_id.'.jpg')}}" style="border-radius:50%" alt="Staff Photo" width="200" height="200">
+                                        <?php
+                                        $profilePhoto_link = 'Passport_Photos/'.'S. '.$staff_data->staff_id.'.jpg';
+                                        if (@getimagesize($profilePhoto_link)) {
+                                            $staff_photo = 'Passport_Photos/'.'S. '.$staff_data->staff_id.'.jpg';
+                                            $imageData = base64_encode(file_get_contents($staff_photo));
+                                            echo '<img src="data:image/png;base64,'.$imageData.'" alt="Staff Photo" style="border-radius:50%" width="200" height="200">';
+                                        } else {
+                                            $nnpc_logo = 'img/x11.png';
+                                            $imageData1 = base64_encode(file_get_contents($nnpc_logo));
+                                            echo '<img src="data:image/png;base64,'.$imageData1.'" alt="Staff Photo" style="border-radius:50%" width="200" height="200">';
+                                        }
+                                        ?>
                                         <br>
                                         <br>
                                         <strong> {{$staff_data->first_name }} {{$staff_data->last_name }}
