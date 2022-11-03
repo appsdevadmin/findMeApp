@@ -53,9 +53,9 @@
                                     <!-- /.col -->
                                     <div class="col-sm-8 invoice-col">
                                         @if($staff_data->blood_group != "-")
-                                        <div class ="row">
+                                        <div class ="row" id="bg_Div">
                                             <div class="col-sm-8" style="text-align:start">
-                                                <img  alt="blood_group" style="border:0; height:13px; width:13px; " src="{{url('img/blood drop.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->blood_group  ?? "-"}}&nbsp;&nbsp;
+                                                <img  alt="blood_group" style="border:0; height:13px; width:13px; " src="{{url('img/blood drop.png')}}"> &nbsp &nbsp &nbsp {{$staff_data->blood_group  ?? "-"}}
                                             </div>
                                         </div>
                                         @endif
