@@ -27,26 +27,25 @@ class OlympusStaffDetailsService
         $this->basicStaffDetails = new GetBasicStaffDetailsRequest();
     }
 
-    public function processRoutineOlympusStaffDetailsDump(): JsonResponse
+    public function processRoutineOlympusStaffDetailsDump()
     {
-        set_time_limit(3000);
+        set_time_limit(3000);    
 
         try {
 
             $all_staff = $this->basicStaffDetails->init();
            // dd($all_staff);
             //check if file is empty
-            if (!$all_staff){
-                return response()->json([
-                    'status'=>false,
-                    'message'=>'empty array'
-                ]);
-            }
+                if (!$all_staff){
+                    return response()->json([
+                        'status'=>false,
+                        'message'=>'empty array'
+                    ]);
+                }
                 //run through file
                 foreach ($all_staff as $value)
                 {
-                    return DB::Transaction(static function () use ($all_staff, $value) {
-                        $updateStaff= staff_data::query()
+                         $updateStaff= staff_data::query()
                             ->where('staff_id', $value['staff_id'])->first();
                         //dd($updateStaff);
                         if($updateStaff){
@@ -69,30 +68,32 @@ class OlympusStaffDetailsService
                                 'sbu' => $value['sbu'],
                                 'category' => $value['category'],
                             ]);
+                           
                         }
-                        else{
-//                            $updateStaff->create([
-//                                'staff_id' => $value['staff_id'],
-//                                'first_name' => $value['firstname'],
-//                                'last_name' => $value['surname'],
-//                                'middle_name' => $value['middle_name'],
-//                                'sex' => $value['sex'],
-//                                'dob' => $value['dob'],
-//                                'grade_code' => $value['grade'],
-//                                'designation' => $value['designation'],
-//                                'phone' => $value['phone'],
-//                                'mobile' => $value['mobile'],
-//                                'office' => $value['office'],
-//                                'ext' => $value['extension'],
-//                                'email' => $value['emailaddress'],
-//                                'loc_description' => $value['location'],
-//                                'department_name' => $value['department'],
-//                                'division_fullname' => $value['division_name'],
-//                                'sbu' => $value['sbu'],
-//                                'category' => $value['category'],
-//                                ]);
-                            }
-                    });
+                        if(!$updateStaff){
+                            //dd($value);
+                           staff_data::create([
+                               'staff_id' => $value['staff_id'],
+                               'first_name' => $value['firstname'],
+                               'last_name' => $value['surname'],
+                               'middle_name' => $value['middle_name'],
+                               'sex' => $value['sex'],
+                               'dob' => $value['dob'],
+                               'grade_code' => $value['grade'],
+                               'designation' => $value['designation'],
+                               'phone' => $value['phone'],
+                               'mobile' => $value['mobile'],
+                               'office' => $value['office'],
+                               'ext' => $value['extension'],
+                               'email' => $value['emailaddress'],
+                               'loc_description' => $value['location'],
+                               'department_name' => $value['department'],
+                               'division_fullname' => $value['division_name'],
+                               'sbu' => $value['sbu'],
+                               'category' => $value['category'],
+                               ]);
+                           }
+                  
                 }
 
                 Log::info('OLYMPUS DUMP COMPLETED'); //Log;

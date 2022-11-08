@@ -14,6 +14,7 @@ class GetBasicStaffDetailsRequest extends Request
             'staffID' => $staff_id,
         ];
         $staff = $this->setServiceURL($this->path, $params)->getApiResponse()['Table'] ?? [];
+        //dd($staff);
         if (! $staff) {
             return [];
         }
